@@ -1,0 +1,14 @@
+# Terraform
+terraform/.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.backup
+*.exe
+
+# dbt
+ep_dbt/target/
+ep_dbt/dbt_packages/
+ep_dbt/logs/
+
+# Python
+__pycache__/
+*.pyc
