@@ -12,3 +12,6 @@ ep_dbt/logs/
 # Python
 __pycache__/
 *.pyc
+
+*.json
+epl-data-pipeline-9999-*.json
