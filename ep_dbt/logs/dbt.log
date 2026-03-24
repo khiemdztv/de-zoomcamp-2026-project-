@@ -1,0 +1,1405 @@
+[0m10:59:16.144771 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000170D4772BD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000170D47734D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000170D46E33D0>]}
+
+
+============================== 10:59:16.149773 | 00507826-8ec6-4e85-8202-290d9fed54f2 ==============================
+[0m10:59:16.149773 [info ] [MainThread]: Running with dbt=1.11.7
+[0m10:59:16.151284 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\25\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt debug', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m10:59:16.174367 [info ] [MainThread]: dbt version: 1.11.7
+[0m10:59:16.175370 [info ] [MainThread]: python version: 3.11.9
+[0m10:59:16.177404 [info ] [MainThread]: python path: C:\Users\25\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe
+[0m10:59:16.178374 [info ] [MainThread]: os info: Windows-10-10.0.19045-SP0
+[0m10:59:22.517153 [info ] [MainThread]: Using profiles dir at C:\Users\25\.dbt
+[0m10:59:22.517153 [info ] [MainThread]: Using profiles.yml file at C:\Users\25\.dbt\profiles.yml
+[0m10:59:22.517153 [info ] [MainThread]: Using dbt_project.yml file at D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\dbt_project.yml
+[0m10:59:22.532896 [info ] [MainThread]: adapter type: bigquery
+[0m10:59:22.532896 [info ] [MainThread]: adapter version: 1.11.1
+[0m10:59:22.535122 [info ] [MainThread]: Configuration:
+[0m10:59:22.535122 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m10:59:22.537837 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m10:59:22.540076 [info ] [MainThread]: Required dependencies:
+[0m10:59:22.540897 [debug] [MainThread]: Executing "git --help"
+[0m10:59:22.587481 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m10:59:22.626089 [debug] [MainThread]: STDERR: "b''"
+[0m10:59:22.626089 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m10:59:22.626089 [info ] [MainThread]: Connection:
+[0m10:59:22.636197 [info ] [MainThread]:   method: service-account
+[0m10:59:22.636197 [info ] [MainThread]:   database: epl-data-pipeline-9999
+[0m10:59:22.636197 [info ] [MainThread]:   execution_project: epl-data-pipeline-9999
+[0m10:59:22.636197 [info ] [MainThread]:   schema: epl_core
+[0m10:59:22.636197 [info ] [MainThread]:   location: asia-southeast1
+[0m10:59:22.641683 [info ] [MainThread]:   priority: interactive
+[0m10:59:22.643224 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m10:59:22.644683 [info ] [MainThread]:   impersonate_service_account: None
+[0m10:59:22.645683 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m10:59:22.646915 [info ] [MainThread]:   job_retries: 1
+[0m10:59:22.648210 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m10:59:22.649213 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m10:59:22.650618 [info ] [MainThread]:   timeout_seconds: 300
+[0m10:59:22.651539 [info ] [MainThread]:   client_id: None
+[0m10:59:22.652858 [info ] [MainThread]:   token_uri: None
+[0m10:59:22.653855 [info ] [MainThread]:   compute_region: None
+[0m10:59:22.654932 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m10:59:22.654932 [info ] [MainThread]:   gcs_bucket: None
+[0m10:59:22.657370 [info ] [MainThread]:   dataproc_batch: None
+[0m10:59:22.658370 [info ] [MainThread]: Registered adapter: bigquery=1.11.1
+[0m10:59:23.445816 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m10:59:23.445816 [debug] [MainThread]: On debug: select 1 as id
+[0m10:59:23.445816 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:59:25.056312 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=epl-data-pipeline-9999&j=bq:asia-southeast1:25aeff0a-6201-4e06-8255-f18dcfb45b93&page=queryresults
+[0m10:59:25.320662 [debug] [MainThread]: SQL status: OK in 0.263 seconds
+[0m10:59:25.637313 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m10:59:25.639299 [info ] [MainThread]: [31m1 check failed:[0m
+[0m10:59:25.640432 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\dbt_project.yml> not found
+
+[0m10:59:25.642579 [debug] [MainThread]: Command `dbt debug` failed at 10:59:25.642579 after 9.64 seconds
+[0m10:59:25.642579 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m10:59:25.642579 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000170D4475690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000170D4475090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000170D46F4910>]}
+[0m10:59:25.642579 [debug] [MainThread]: Flushing usage events
+[0m10:59:28.107375 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:00:29.711007 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B3B71EB590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B3B71E8ED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B3B71EAED0>]}
+
+
+============================== 11:00:29.711007 | e64a1412-6f92-4ab2-b6b6-503dc62860ed ==============================
+[0m11:00:29.711007 [info ] [MainThread]: Running with dbt=1.11.7
+[0m11:00:29.711007 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\25\\.dbt', 'indirect_selection': 'eager', 'invocation_command': 'dbt debug', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'D:\\Documents\\DE Zoomcamp 2026 Final Project\\ep_dbt\\logs'}
+[0m11:00:29.737211 [info ] [MainThread]: dbt version: 1.11.7
+[0m11:00:29.739039 [info ] [MainThread]: python version: 3.11.9
+[0m11:00:29.740461 [info ] [MainThread]: python path: C:\Users\25\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe
+[0m11:00:29.740461 [info ] [MainThread]: os info: Windows-10-10.0.19045-SP0
+[0m11:00:29.747148 [info ] [MainThread]: Using profiles dir at C:\Users\25\.dbt
+[0m11:00:29.748985 [info ] [MainThread]: Using profiles.yml file at C:\Users\25\.dbt\profiles.yml
+[0m11:00:29.749478 [info ] [MainThread]: Using dbt_project.yml file at D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\dbt_project.yml
+[0m11:00:29.901389 [info ] [MainThread]: Configuration:
+[0m11:00:29.901389 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
+[0m11:00:29.901389 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m11:00:29.910316 [info ] [MainThread]: Required dependencies:
+[0m11:00:29.910316 [debug] [MainThread]: Executing "git --help"
+[0m11:00:29.954265 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m11:00:29.955480 [debug] [MainThread]: STDERR: "b''"
+[0m11:00:29.955480 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m11:00:29.955480 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m11:00:29.955480 [info ] [MainThread]: [31m1 check failed:[0m
+[0m11:00:29.959661 [info ] [MainThread]: Profile loading failed for the following reason:
+Runtime Error
+  Could not find profile named 'ep_dbt'
+
+
+[0m11:00:29.961622 [debug] [MainThread]: Command `dbt debug` failed at 11:00:29.961622 after 0.35 seconds
+[0m11:00:29.961622 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B3B12F9210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B3B7588C50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B3B52E9210>]}
+[0m11:00:29.961622 [debug] [MainThread]: Flushing usage events
+[0m11:00:31.297737 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:01:23.611271 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BDD35EAB10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BDD3857ED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BDD35EA2D0>]}
+
+
+============================== 11:01:23.611271 | acbc16a8-4416-4631-ade3-4a2023a9fd83 ==============================
+[0m11:01:23.611271 [info ] [MainThread]: Running with dbt=1.11.7
+[0m11:01:23.621633 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\25\\.dbt', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt debug', 'use_experimental_parser': 'False', 'log_path': 'D:\\Documents\\DE Zoomcamp 2026 Final Project\\ep_dbt\\logs'}
+[0m11:01:23.638604 [info ] [MainThread]: dbt version: 1.11.7
+[0m11:01:23.640319 [info ] [MainThread]: python version: 3.11.9
+[0m11:01:23.641216 [info ] [MainThread]: python path: C:\Users\25\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe
+[0m11:01:23.643217 [info ] [MainThread]: os info: Windows-10-10.0.19045-SP0
+[0m11:01:29.698960 [info ] [MainThread]: Using profiles dir at C:\Users\25\.dbt
+[0m11:01:29.698960 [info ] [MainThread]: Using profiles.yml file at C:\Users\25\.dbt\profiles.yml
+[0m11:01:29.698960 [info ] [MainThread]: Using dbt_project.yml file at D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\dbt_project.yml
+[0m11:01:29.848687 [info ] [MainThread]: Configuration:
+[0m11:01:29.848687 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
+[0m11:01:29.848687 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m11:01:29.901596 [info ] [MainThread]: Required dependencies:
+[0m11:01:29.902604 [debug] [MainThread]: Executing "git --help"
+[0m11:01:29.946168 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m11:01:29.946168 [debug] [MainThread]: STDERR: "b''"
+[0m11:01:29.946168 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m11:01:29.946168 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m11:01:29.950844 [info ] [MainThread]: [31m1 check failed:[0m
+[0m11:01:29.952121 [info ] [MainThread]: Profile loading failed for the following reason:
+Runtime Error
+  Credentials in profile "ep_dbt", target "dev" invalid: '{\n  "type": "service_account",\n  "project_id": "epl-data-pipeline-9999",\n  # Paste FULL JSON content từ file epl-data-pipeline-9999-de6a9c38ce47.json của bạn\n}' is not valid under any of the given schemas
+
+
+[0m11:01:29.955274 [debug] [MainThread]: Command `dbt debug` failed at 11:01:29.955274 after 6.45 seconds
+[0m11:01:29.956313 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BDCD6F9210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BDCD6F9510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BDD2B25F50>]}
+[0m11:01:29.957283 [debug] [MainThread]: Flushing usage events
+[0m11:01:31.231122 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:02:10.750816 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CF9DFEAC90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CF9DA879D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CF9DFEAB50>]}
+
+
+============================== 11:02:10.750816 | f0b3cf96-4b24-432c-9fc8-cee06381bf51 ==============================
+[0m11:02:10.750816 [info ] [MainThread]: Running with dbt=1.11.7
+[0m11:02:10.760102 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\25\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt debug', 'use_experimental_parser': 'False', 'log_path': 'D:\\Documents\\DE Zoomcamp 2026 Final Project\\ep_dbt\\logs'}
+[0m11:02:10.776742 [info ] [MainThread]: dbt version: 1.11.7
+[0m11:02:10.778887 [info ] [MainThread]: python version: 3.11.9
+[0m11:02:10.780101 [info ] [MainThread]: python path: C:\Users\25\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe
+[0m11:02:10.782104 [info ] [MainThread]: os info: Windows-10-10.0.19045-SP0
+[0m11:02:17.169630 [info ] [MainThread]: Using profiles dir at C:\Users\25\.dbt
+[0m11:02:17.169630 [info ] [MainThread]: Using profiles.yml file at C:\Users\25\.dbt\profiles.yml
+[0m11:02:17.169630 [info ] [MainThread]: Using dbt_project.yml file at D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\dbt_project.yml
+[0m11:02:17.178332 [info ] [MainThread]: adapter type: bigquery
+[0m11:02:17.178332 [info ] [MainThread]: adapter version: 1.11.1
+[0m11:02:17.333542 [info ] [MainThread]: Configuration:
+[0m11:02:17.334533 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m11:02:17.335617 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m11:02:17.336544 [info ] [MainThread]: Required dependencies:
+[0m11:02:17.337502 [debug] [MainThread]: Executing "git --help"
+[0m11:02:17.382278 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m11:02:17.382278 [debug] [MainThread]: STDERR: "b''"
+[0m11:02:17.383284 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m11:02:17.384240 [info ] [MainThread]: Connection:
+[0m11:02:17.385240 [info ] [MainThread]:   method: service-account
+[0m11:02:17.386239 [info ] [MainThread]:   database: epl-data-pipeline-9999
+[0m11:02:17.388064 [info ] [MainThread]:   execution_project: epl-data-pipeline-9999
+[0m11:02:17.388064 [info ] [MainThread]:   schema: epl_core
+[0m11:02:17.388064 [info ] [MainThread]:   location: asia-southeast1
+[0m11:02:17.391323 [info ] [MainThread]:   priority: None
+[0m11:02:17.392358 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m11:02:17.393323 [info ] [MainThread]:   impersonate_service_account: None
+[0m11:02:17.394376 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m11:02:17.395449 [info ] [MainThread]:   job_retries: 1
+[0m11:02:17.396322 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m11:02:17.397444 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m11:02:17.399360 [info ] [MainThread]:   timeout_seconds: 300
+[0m11:02:17.400322 [info ] [MainThread]:   client_id: None
+[0m11:02:17.401324 [info ] [MainThread]:   token_uri: None
+[0m11:02:17.402323 [info ] [MainThread]:   compute_region: None
+[0m11:02:17.403879 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m11:02:17.405012 [info ] [MainThread]:   gcs_bucket: None
+[0m11:02:17.406012 [info ] [MainThread]:   dataproc_batch: None
+[0m11:02:17.408050 [info ] [MainThread]: Registered adapter: bigquery=1.11.1
+[0m11:02:18.055732 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m11:02:18.055732 [debug] [MainThread]: On debug: select 1 as id
+[0m11:02:18.055732 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:02:19.860736 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=epl-data-pipeline-9999&j=bq:asia-southeast1:f3581e85-feb9-4717-b185-7e49b272dab8&page=queryresults
+[0m11:02:20.110679 [debug] [MainThread]: SQL status: OK in 0.249 seconds
+[0m11:02:20.447124 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m11:02:20.447124 [info ] [MainThread]: [32mAll checks passed![0m
+[0m11:02:20.457504 [debug] [MainThread]: Command `dbt debug` succeeded at 11:02:20.457504 after 9.81 seconds
+[0m11:02:20.457504 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m11:02:20.457504 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CF9C5528D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CF98073C90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CF98073C50>]}
+[0m11:02:20.459518 [debug] [MainThread]: Flushing usage events
+[0m11:02:21.759875 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:04:15.190005 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026480B75450>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026480B4F250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026480B77510>]}
+
+
+============================== 11:04:15.196559 | 5437c448-7522-45ef-bb94-66bde9846c86 ==============================
+[0m11:04:15.196559 [info ] [MainThread]: Running with dbt=1.11.7
+[0m11:04:15.200551 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\25\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt run --models stg_players', 'indirect_selection': 'eager', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'D:\\Documents\\DE Zoomcamp 2026 Final Project\\ep_dbt\\logs'}
+[0m11:04:15.200551 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+Usage of `--models`, `--model`, and `-m` is deprecated in favor of `--select` or
+`-s`.
+[0m11:04:15.200551 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '5437c448-7522-45ef-bb94-66bde9846c86', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026480B38F10>]}
+[0m11:04:22.856940 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '5437c448-7522-45ef-bb94-66bde9846c86', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000264961EF9D0>]}
+[0m11:04:22.976227 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '5437c448-7522-45ef-bb94-66bde9846c86', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000264FC14AF50>]}
+[0m11:04:22.977534 [info ] [MainThread]: Registered adapter: bigquery=1.11.1
+[0m11:04:23.782196 [debug] [MainThread]: checksum: b80718358155fc17c3559352095564dd56ada1cc1a1c0ef2e62c857e71583775, vars: {}, profile: , target: , version: 1.11.7
+[0m11:04:23.782196 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m11:04:23.782196 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '5437c448-7522-45ef-bb94-66bde9846c86', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002649643F590>]}
+[0m11:04:26.959441 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.ep_dbt.marts
+[0m11:04:26.959509 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '5437c448-7522-45ef-bb94-66bde9846c86', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026480B5BB90>]}
+[0m11:04:27.059541 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\manifest.json
+[0m11:04:27.059541 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\semantic_manifest.json
+[0m11:04:27.157805 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '5437c448-7522-45ef-bb94-66bde9846c86', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026496EEE410>]}
+[0m11:04:27.159253 [info ] [MainThread]: Found 1 model, 538 macros
+[0m11:04:27.161807 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5437c448-7522-45ef-bb94-66bde9846c86', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002648165D550>]}
+[0m11:04:27.166806 [info ] [MainThread]: 
+[0m11:04:27.168806 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m11:04:27.170806 [info ] [MainThread]: 
+[0m11:04:27.193552 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m11:04:27.195909 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_epl-data-pipeline-9999'
+[0m11:04:27.196909 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:04:28.790546 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_epl-data-pipeline-9999_epl_core'
+[0m11:04:28.790546 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:04:29.992814 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5437c448-7522-45ef-bb94-66bde9846c86', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026496BF2D50>]}
+[0m11:04:29.992814 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:04:30.042771 [debug] [Thread-1 (]: Began running node model.ep_dbt.stg_players
+[0m11:04:30.042771 [info ] [Thread-1 (]: 1 of 1 START sql view model epl_core.stg_players ............................... [RUN]
+[0m11:04:30.042771 [debug] [Thread-1 (]: Acquiring new bigquery connection 'model.ep_dbt.stg_players'
+[0m11:04:30.042771 [debug] [Thread-1 (]: Began compiling node model.ep_dbt.stg_players
+[0m11:04:30.049333 [debug] [Thread-1 (]: Writing injected SQL for node "model.ep_dbt.stg_players"
+[0m11:04:30.049333 [debug] [Thread-1 (]: Began executing node model.ep_dbt.stg_players
+[0m11:04:30.089672 [debug] [Thread-1 (]: Writing runtime sql for node "model.ep_dbt.stg_players"
+[0m11:04:30.101840 [debug] [Thread-1 (]: On model.ep_dbt.stg_players: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "ep_dbt", "target_name": "dev", "node_id": "model.ep_dbt.stg_players"} */
+
+
+  create or replace view `epl-data-pipeline-9999`.`epl_core`.`stg_players`
+  OPTIONS()
+  as 
+
+with players_source as (
+    select * 
+    from `epl-data-pipeline-9999.epl_core.players`
+)
+
+select
+    player_id,
+    player_name,
+    nationality,
+    position,
+    date_of_birth::date as date_of_birth
+from players_source;
+
+
+[0m11:04:30.103126 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m11:04:31.356256 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=epl-data-pipeline-9999&j=bq:asia-southeast1:1b32c578-d51a-4595-b8d9-cb40d5bdc289&page=queryresults
+[0m11:04:31.357035 [error] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=epl-data-pipeline-9999&j=bq:asia-southeast1:1b32c578-d51a-4595-b8d9-cb40d5bdc289&page=queryresults
+[0m11:04:31.394850 [debug] [Thread-1 (]: Database Error in model stg_players (models\staging\stg_players.sql)
+  Syntax error: Expected end of input but got ":" at [18:18]
+  compiled code at target\run\ep_dbt\models\staging\stg_players.sql
+[0m11:04:31.405641 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5437c448-7522-45ef-bb94-66bde9846c86', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026496AF4F10>]}
+[0m11:04:31.407521 [error] [Thread-1 (]: 1 of 1 ERROR creating sql view model epl_core.stg_players ...................... [[31mERROR[0m in 1.35s]
+[0m11:04:31.407521 [debug] [Thread-1 (]: Finished running node model.ep_dbt.stg_players
+[0m11:04:31.407521 [debug] [Thread-7 (]: Marking all children of 'model.ep_dbt.stg_players' to be skipped because of status 'error'.  Reason: Database Error in model stg_players (models\staging\stg_players.sql)
+  Syntax error: Expected end of input but got ":" at [18:18]
+  compiled code at target\run\ep_dbt\models\staging\stg_players.sql.
+[0m11:04:31.407521 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m11:04:31.441529 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:04:31.455652 [debug] [MainThread]: Connection 'list_epl-data-pipeline-9999' was properly closed.
+[0m11:04:31.456648 [debug] [MainThread]: Connection 'list_epl-data-pipeline-9999_epl_core' was properly closed.
+[0m11:04:31.457137 [debug] [MainThread]: Connection 'model.ep_dbt.stg_players' was properly closed.
+[0m11:04:31.457137 [info ] [MainThread]: 
+[0m11:04:31.459275 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 4.26 seconds (4.26s).
+[0m11:04:31.461290 [debug] [MainThread]: Command end result
+[0m11:04:31.533362 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\manifest.json
+[0m11:04:31.536367 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\semantic_manifest.json
+[0m11:04:31.545476 [debug] [MainThread]: Wrote artifact RunExecutionResult to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\run_results.json
+[0m11:04:31.546324 [info ] [MainThread]: 
+[0m11:04:31.547318 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m11:04:31.548028 [info ] [MainThread]: 
+[0m11:04:31.549175 [error] [MainThread]: [31mFailure in model stg_players (models\staging\stg_players.sql)[0m
+[0m11:04:31.550184 [error] [MainThread]:   Database Error in model stg_players (models\staging\stg_players.sql)
+  Syntax error: Expected end of input but got ":" at [18:18]
+  compiled code at target\run\ep_dbt\models\staging\stg_players.sql
+[0m11:04:31.551186 [info ] [MainThread]: 
+[0m11:04:31.552209 [info ] [MainThread]:   compiled code at target\compiled\ep_dbt\models\staging\stg_players.sql
+[0m11:04:31.553311 [info ] [MainThread]: 
+[0m11:04:31.554207 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=1
+[0m11:04:31.556210 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- ModelParamUsageDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m11:04:31.559212 [debug] [MainThread]: Command `dbt run` failed at 11:04:31.559212 after 16.49 seconds
+[0m11:04:31.560562 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026480875490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026480875290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000264FE352410>]}
+[0m11:04:31.562770 [debug] [MainThread]: Flushing usage events
+[0m11:04:32.947145 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:05:59.829959 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E0163EBD50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E015F74FD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E015F74D10>]}
+
+
+============================== 11:05:59.832128 | 211ff111-4fe0-40d2-be96-4baedd46fc58 ==============================
+[0m11:05:59.832128 [info ] [MainThread]: Running with dbt=1.11.7
+[0m11:05:59.837283 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\25\\.dbt', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt run --select stg_players', 'use_experimental_parser': 'False', 'log_path': 'D:\\Documents\\DE Zoomcamp 2026 Final Project\\ep_dbt\\logs'}
+[0m11:06:06.015137 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '211ff111-4fe0-40d2-be96-4baedd46fc58', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E02BAFA810>]}
+[0m11:06:06.108875 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '211ff111-4fe0-40d2-be96-4baedd46fc58', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E011C4F850>]}
+[0m11:06:06.108875 [info ] [MainThread]: Registered adapter: bigquery=1.11.1
+[0m11:06:06.778819 [debug] [MainThread]: checksum: b80718358155fc17c3559352095564dd56ada1cc1a1c0ef2e62c857e71583775, vars: {}, profile: , target: , version: 1.11.7
+[0m11:06:06.936523 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m11:06:06.936523 [debug] [MainThread]: Partial parsing: updated file: ep_dbt://models\staging\stg_players.sql
+[0m11:06:07.338944 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.ep_dbt.marts
+[0m11:06:07.344942 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '211ff111-4fe0-40d2-be96-4baedd46fc58', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E02B9F0B90>]}
+[0m11:06:07.413981 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\manifest.json
+[0m11:06:07.417825 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\semantic_manifest.json
+[0m11:06:07.435514 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '211ff111-4fe0-40d2-be96-4baedd46fc58', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E02CA7A810>]}
+[0m11:06:07.440424 [info ] [MainThread]: Found 1 model, 538 macros
+[0m11:06:07.442299 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '211ff111-4fe0-40d2-be96-4baedd46fc58', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E02C37F590>]}
+[0m11:06:07.442628 [info ] [MainThread]: 
+[0m11:06:07.442628 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m11:06:07.445843 [info ] [MainThread]: 
+[0m11:06:07.448186 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m11:06:07.450902 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_epl-data-pipeline-9999'
+[0m11:06:07.451902 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:06:08.863356 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_epl-data-pipeline-9999_epl_core'
+[0m11:06:08.863356 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:06:10.017134 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '211ff111-4fe0-40d2-be96-4baedd46fc58', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E02C3D9E90>]}
+[0m11:06:10.017134 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:06:10.064063 [debug] [Thread-1 (]: Began running node model.ep_dbt.stg_players
+[0m11:06:10.064063 [info ] [Thread-1 (]: 1 of 1 START sql view model epl_core.stg_players ............................... [RUN]
+[0m11:06:10.064063 [debug] [Thread-1 (]: Acquiring new bigquery connection 'model.ep_dbt.stg_players'
+[0m11:06:10.064063 [debug] [Thread-1 (]: Began compiling node model.ep_dbt.stg_players
+[0m11:06:10.076175 [debug] [Thread-1 (]: Writing injected SQL for node "model.ep_dbt.stg_players"
+[0m11:06:10.076175 [debug] [Thread-1 (]: Began executing node model.ep_dbt.stg_players
+[0m11:06:10.123488 [debug] [Thread-1 (]: Writing runtime sql for node "model.ep_dbt.stg_players"
+[0m11:06:10.124488 [debug] [Thread-1 (]: On model.ep_dbt.stg_players: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "ep_dbt", "target_name": "dev", "node_id": "model.ep_dbt.stg_players"} */
+
+
+  create or replace view `epl-data-pipeline-9999`.`epl_core`.`stg_players`
+  OPTIONS()
+  as 
+
+with players_source as (
+    select * 
+    from `epl-data-pipeline-9999.epl_core.players`
+)
+
+select
+    player_id,
+    player_name,
+    nationality,
+    position,
+    PARSE_DATE('%Y-%m-%d', date_of_birth) as date_of_birth
+from players_source;
+
+
+[0m11:06:10.125460 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m11:06:11.710419 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=epl-data-pipeline-9999&j=bq:asia-southeast1:8f05d6a4-54a8-4d74-8c60-85591e8bede5&page=queryresults
+[0m11:06:11.710419 [error] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=epl-data-pipeline-9999&j=bq:asia-southeast1:8f05d6a4-54a8-4d74-8c60-85591e8bede5&page=queryresults
+[0m11:06:11.736157 [debug] [Thread-1 (]: Database Error in model stg_players (models\staging\stg_players.sql)
+  Not found: Table epl-data-pipeline-9999:epl_core.players was not found in location asia-southeast1
+  compiled code at target\run\ep_dbt\models\staging\stg_players.sql
+[0m11:06:11.738155 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '211ff111-4fe0-40d2-be96-4baedd46fc58', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E02CABFF50>]}
+[0m11:06:11.739822 [error] [Thread-1 (]: 1 of 1 ERROR creating sql view model epl_core.stg_players ...................... [[31mERROR[0m in 1.67s]
+[0m11:06:11.741116 [debug] [Thread-1 (]: Finished running node model.ep_dbt.stg_players
+[0m11:06:11.742131 [debug] [Thread-7 (]: Marking all children of 'model.ep_dbt.stg_players' to be skipped because of status 'error'.  Reason: Database Error in model stg_players (models\staging\stg_players.sql)
+  Not found: Table epl-data-pipeline-9999:epl_core.players was not found in location asia-southeast1
+  compiled code at target\run\ep_dbt\models\staging\stg_players.sql.
+[0m11:06:11.744136 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m11:06:11.783792 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:06:11.783792 [debug] [MainThread]: Connection 'list_epl-data-pipeline-9999' was properly closed.
+[0m11:06:11.783792 [debug] [MainThread]: Connection 'list_epl-data-pipeline-9999_epl_core' was properly closed.
+[0m11:06:11.788409 [debug] [MainThread]: Connection 'model.ep_dbt.stg_players' was properly closed.
+[0m11:06:11.789287 [info ] [MainThread]: 
+[0m11:06:11.789287 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 4.34 seconds (4.34s).
+[0m11:06:11.791571 [debug] [MainThread]: Command end result
+[0m11:06:11.850198 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\manifest.json
+[0m11:06:11.857207 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\semantic_manifest.json
+[0m11:06:11.859769 [debug] [MainThread]: Wrote artifact RunExecutionResult to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\run_results.json
+[0m11:06:11.867248 [info ] [MainThread]: 
+[0m11:06:11.867810 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m11:06:11.867810 [info ] [MainThread]: 
+[0m11:06:11.870797 [error] [MainThread]: [31mFailure in model stg_players (models\staging\stg_players.sql)[0m
+[0m11:06:11.870797 [error] [MainThread]:   Database Error in model stg_players (models\staging\stg_players.sql)
+  Not found: Table epl-data-pipeline-9999:epl_core.players was not found in location asia-southeast1
+  compiled code at target\run\ep_dbt\models\staging\stg_players.sql
+[0m11:06:11.872757 [info ] [MainThread]: 
+[0m11:06:11.874161 [info ] [MainThread]:   compiled code at target\compiled\ep_dbt\models\staging\stg_players.sql
+[0m11:06:11.875160 [info ] [MainThread]: 
+[0m11:06:11.876207 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=1
+[0m11:06:11.878193 [debug] [MainThread]: Command `dbt run` failed at 11:06:11.878193 after 12.16 seconds
+[0m11:06:11.879160 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E014ED2BD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E010473B50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E0163EA2D0>]}
+[0m11:06:11.879460 [debug] [MainThread]: Flushing usage events
+[0m11:06:13.359547 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:18:20.725622 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001953A6EB3D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001953A73A9D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001953A6E9ED0>]}
+
+
+============================== 11:18:20.729662 | 4c64cde6-45e5-4ba5-8c11-ca86d90aec6d ==============================
+[0m11:18:20.729662 [info ] [MainThread]: Running with dbt=1.11.7
+[0m11:18:20.731621 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\25\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt run --select staging', 'use_experimental_parser': 'False', 'log_path': 'D:\\Documents\\DE Zoomcamp 2026 Final Project\\ep_dbt\\logs'}
+[0m11:18:26.911025 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '4c64cde6-45e5-4ba5-8c11-ca86d90aec6d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000195361E4210>]}
+[0m11:18:27.012029 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '4c64cde6-45e5-4ba5-8c11-ca86d90aec6d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019535D4B490>]}
+[0m11:18:27.014003 [info ] [MainThread]: Registered adapter: bigquery=1.11.1
+[0m11:18:27.700225 [debug] [MainThread]: checksum: b80718358155fc17c3559352095564dd56ada1cc1a1c0ef2e62c857e71583775, vars: {}, profile: , target: , version: 1.11.7
+[0m11:18:27.848605 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 2 files added, 1 files changed.
+[0m11:18:27.848605 [debug] [MainThread]: Partial parsing: added file: ep_dbt://models\staging\stg_matches.sql
+[0m11:18:27.848605 [debug] [MainThread]: Partial parsing: added file: ep_dbt://models\staging\stg_player_stats.sql
+[0m11:18:27.852990 [debug] [MainThread]: Partial parsing: updated file: ep_dbt://models\staging\stg_players.sql
+[0m11:18:28.271005 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.ep_dbt.marts
+[0m11:18:28.271005 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '4c64cde6-45e5-4ba5-8c11-ca86d90aec6d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001953A768E90>]}
+[0m11:18:28.372644 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\manifest.json
+[0m11:18:28.372644 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\semantic_manifest.json
+[0m11:18:28.403896 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '4c64cde6-45e5-4ba5-8c11-ca86d90aec6d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019550989D50>]}
+[0m11:18:28.403896 [info ] [MainThread]: Found 3 models, 538 macros
+[0m11:18:28.409257 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '4c64cde6-45e5-4ba5-8c11-ca86d90aec6d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001955099F750>]}
+[0m11:18:28.410262 [info ] [MainThread]: 
+[0m11:18:28.412584 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m11:18:28.412948 [info ] [MainThread]: 
+[0m11:18:28.414321 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m11:18:28.420112 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_epl-data-pipeline-9999'
+[0m11:18:28.420112 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:18:29.845037 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_epl-data-pipeline-9999_epl_core'
+[0m11:18:29.845037 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:18:30.992011 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '4c64cde6-45e5-4ba5-8c11-ca86d90aec6d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019550897790>]}
+[0m11:18:30.992011 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:18:31.038723 [debug] [Thread-1 (]: Began running node model.ep_dbt.stg_matches
+[0m11:18:31.038723 [debug] [Thread-2 (]: Began running node model.ep_dbt.stg_player_stats
+[0m11:18:31.038723 [debug] [Thread-3 (]: Began running node model.ep_dbt.stg_players
+[0m11:18:31.038723 [info ] [Thread-1 (]: 1 of 3 START sql view model epl_core.stg_matches ............................... [RUN]
+[0m11:18:31.038723 [info ] [Thread-2 (]: 2 of 3 START sql view model epl_core.stg_player_stats .......................... [RUN]
+[0m11:18:31.046757 [info ] [Thread-3 (]: 3 of 3 START sql view model epl_core.stg_players ............................... [RUN]
+[0m11:18:31.046757 [debug] [Thread-1 (]: Acquiring new bigquery connection 'model.ep_dbt.stg_matches'
+[0m11:18:31.049697 [debug] [Thread-2 (]: Acquiring new bigquery connection 'model.ep_dbt.stg_player_stats'
+[0m11:18:31.049697 [debug] [Thread-3 (]: Acquiring new bigquery connection 'model.ep_dbt.stg_players'
+[0m11:18:31.049697 [debug] [Thread-1 (]: Began compiling node model.ep_dbt.stg_matches
+[0m11:18:31.051536 [debug] [Thread-2 (]: Began compiling node model.ep_dbt.stg_player_stats
+[0m11:18:31.052727 [debug] [Thread-3 (]: Began compiling node model.ep_dbt.stg_players
+[0m11:18:31.052727 [debug] [Thread-1 (]: Writing injected SQL for node "model.ep_dbt.stg_matches"
+[0m11:18:31.067495 [debug] [Thread-2 (]: Writing injected SQL for node "model.ep_dbt.stg_player_stats"
+[0m11:18:31.070532 [debug] [Thread-3 (]: Writing injected SQL for node "model.ep_dbt.stg_players"
+[0m11:18:31.108183 [debug] [Thread-1 (]: Began executing node model.ep_dbt.stg_matches
+[0m11:18:31.110032 [debug] [Thread-3 (]: Began executing node model.ep_dbt.stg_players
+[0m11:18:31.111047 [debug] [Thread-2 (]: Began executing node model.ep_dbt.stg_player_stats
+[0m11:18:31.144319 [debug] [Thread-1 (]: Writing runtime sql for node "model.ep_dbt.stg_matches"
+[0m11:18:31.148242 [debug] [Thread-3 (]: Writing runtime sql for node "model.ep_dbt.stg_players"
+[0m11:18:31.151799 [debug] [Thread-2 (]: Writing runtime sql for node "model.ep_dbt.stg_player_stats"
+[0m11:18:31.153465 [debug] [Thread-1 (]: On model.ep_dbt.stg_matches: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "ep_dbt", "target_name": "dev", "node_id": "model.ep_dbt.stg_matches"} */
+
+
+  create or replace view `epl-data-pipeline-9999`.`epl_core`.`stg_matches`
+  OPTIONS()
+  as 
+
+select * from `epl-data-pipeline-9999.epl_raw.fact_matches`;
+
+
+[0m11:18:31.155462 [debug] [Thread-3 (]: On model.ep_dbt.stg_players: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "ep_dbt", "target_name": "dev", "node_id": "model.ep_dbt.stg_players"} */
+
+
+  create or replace view `epl-data-pipeline-9999`.`epl_core`.`stg_players`
+  OPTIONS()
+  as 
+
+select * 
+from `epl-data-pipeline-9999.epl_raw.player_info`;
+
+
+[0m11:18:31.155647 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m11:18:31.157080 [debug] [Thread-2 (]: On model.ep_dbt.stg_player_stats: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "ep_dbt", "target_name": "dev", "node_id": "model.ep_dbt.stg_player_stats"} */
+
+
+  create or replace view `epl-data-pipeline-9999`.`epl_core`.`stg_player_stats`
+  OPTIONS()
+  as 
+
+select * from `epl-data-pipeline-9999.epl_raw.player_stats_2425`;
+
+
+[0m11:18:31.157404 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m11:18:31.189560 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m11:18:33.156052 [debug] [Thread-2 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=epl-data-pipeline-9999&j=bq:asia-southeast1:6fcae687-6111-4d00-91d4-af7187b82b51&page=queryresults
+[0m11:18:33.218553 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=epl-data-pipeline-9999&j=bq:asia-southeast1:fd3b8859-0593-404d-86fb-f6e01c7e9687&page=queryresults
+[0m11:18:33.360100 [debug] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=epl-data-pipeline-9999&j=bq:asia-southeast1:e54a68d9-1e5b-4fc4-8af2-3228005603cd&page=queryresults
+[0m11:18:33.593874 [debug] [Thread-2 (]: SQL status: OK in 0.433 seconds
+[0m11:18:33.641535 [debug] [Thread-1 (]: SQL status: OK in 0.423 seconds
+[0m11:18:33.688414 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '4c64cde6-45e5-4ba5-8c11-ca86d90aec6d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000195519D40D0>]}
+[0m11:18:33.688414 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '4c64cde6-45e5-4ba5-8c11-ca86d90aec6d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000195508B3210>]}
+[0m11:18:33.688414 [info ] [Thread-1 (]: 1 of 3 OK created sql view model epl_core.stg_matches .......................... [[32mCREATE VIEW (0 processed)[0m in 2.64s]
+[0m11:18:33.700179 [info ] [Thread-2 (]: 2 of 3 OK created sql view model epl_core.stg_player_stats ..................... [[32mCREATE VIEW (0 processed)[0m in 2.64s]
+[0m11:18:33.700179 [debug] [Thread-1 (]: Finished running node model.ep_dbt.stg_matches
+[0m11:18:33.700179 [debug] [Thread-2 (]: Finished running node model.ep_dbt.stg_player_stats
+[0m11:18:33.780887 [debug] [Thread-3 (]: SQL status: OK in 0.420 seconds
+[0m11:18:33.785912 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '4c64cde6-45e5-4ba5-8c11-ca86d90aec6d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019550897DD0>]}
+[0m11:18:33.786884 [info ] [Thread-3 (]: 3 of 3 OK created sql view model epl_core.stg_players .......................... [[32mCREATE VIEW (0 processed)[0m in 2.74s]
+[0m11:18:33.788843 [debug] [Thread-3 (]: Finished running node model.ep_dbt.stg_players
+[0m11:18:33.791285 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m11:18:33.823486 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:18:33.823486 [debug] [MainThread]: Connection 'list_epl-data-pipeline-9999' was properly closed.
+[0m11:18:33.823486 [debug] [MainThread]: Connection 'list_epl-data-pipeline-9999_epl_core' was properly closed.
+[0m11:18:33.834647 [debug] [MainThread]: Connection 'model.ep_dbt.stg_matches' was properly closed.
+[0m11:18:33.835004 [debug] [MainThread]: Connection 'model.ep_dbt.stg_player_stats' was properly closed.
+[0m11:18:33.835004 [debug] [MainThread]: Connection 'model.ep_dbt.stg_players' was properly closed.
+[0m11:18:33.835004 [info ] [MainThread]: 
+[0m11:18:33.835004 [info ] [MainThread]: Finished running 3 view models in 0 hours 0 minutes and 5.42 seconds (5.42s).
+[0m11:18:33.839801 [debug] [MainThread]: Command end result
+[0m11:18:33.907312 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\manifest.json
+[0m11:18:33.907312 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\semantic_manifest.json
+[0m11:18:33.914753 [debug] [MainThread]: Wrote artifact RunExecutionResult to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\run_results.json
+[0m11:18:33.914753 [info ] [MainThread]: 
+[0m11:18:33.923069 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m11:18:33.923634 [info ] [MainThread]: 
+[0m11:18:33.924656 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=3
+[0m11:18:33.926696 [debug] [MainThread]: Command `dbt run` succeeded at 11:18:33.926696 after 13.31 seconds
+[0m11:18:33.926696 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019535A9A090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019534A23B90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000195518D0D50>]}
+[0m11:18:33.927697 [debug] [MainThread]: Flushing usage events
+[0m11:18:37.313461 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:23:50.021605 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024D0C1EB610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024D0C430710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024D0C1EA710>]}
+
+
+============================== 11:23:50.021605 | e4f8b440-4d9b-41ff-904f-bead118f6b8d ==============================
+[0m11:23:50.021605 [info ] [MainThread]: Running with dbt=1.11.7
+[0m11:23:50.021605 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\25\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt run --select marts', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'D:\\Documents\\DE Zoomcamp 2026 Final Project\\ep_dbt\\logs'}
+[0m11:23:56.846712 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e4f8b440-4d9b-41ff-904f-bead118f6b8d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024D218B7D50>]}
+[0m11:23:56.940465 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'e4f8b440-4d9b-41ff-904f-bead118f6b8d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024D07A4A350>]}
+[0m11:23:56.940465 [info ] [MainThread]: Registered adapter: bigquery=1.11.1
+[0m11:23:57.656872 [debug] [MainThread]: checksum: b80718358155fc17c3559352095564dd56ada1cc1a1c0ef2e62c857e71583775, vars: {}, profile: , target: , version: 1.11.7
+[0m11:23:57.791217 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 2 files added, 0 files changed.
+[0m11:23:57.791217 [debug] [MainThread]: Partial parsing: added file: ep_dbt://models\marts\dim\dim_players.sql
+[0m11:23:57.791217 [debug] [MainThread]: Partial parsing: added file: ep_dbt://models\marts\fact\fct_matches.sql
+[0m11:23:58.254774 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'e4f8b440-4d9b-41ff-904f-bead118f6b8d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024D0C03AF50>]}
+[0m11:23:58.330278 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\manifest.json
+[0m11:23:58.332420 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\semantic_manifest.json
+[0m11:23:58.348348 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'e4f8b440-4d9b-41ff-904f-bead118f6b8d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024D228B98D0>]}
+[0m11:23:58.357133 [info ] [MainThread]: Found 5 models, 538 macros
+[0m11:23:58.357133 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e4f8b440-4d9b-41ff-904f-bead118f6b8d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024D0C432ED0>]}
+[0m11:23:58.359671 [info ] [MainThread]: 
+[0m11:23:58.359671 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m11:23:58.359671 [info ] [MainThread]: 
+[0m11:23:58.363017 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m11:23:58.370929 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_epl-data-pipeline-9999'
+[0m11:23:58.392420 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:23:59.764251 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_epl-data-pipeline-9999_epl_core'
+[0m11:23:59.764251 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:24:00.972117 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e4f8b440-4d9b-41ff-904f-bead118f6b8d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024D21988350>]}
+[0m11:24:00.972117 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:24:01.018977 [debug] [Thread-1 (]: Began running node model.ep_dbt.dim_players
+[0m11:24:01.018977 [debug] [Thread-2 (]: Began running node model.ep_dbt.fct_matches
+[0m11:24:01.018977 [info ] [Thread-1 (]: 1 of 2 START sql table model epl_core.dim_players .............................. [RUN]
+[0m11:24:01.018977 [info ] [Thread-2 (]: 2 of 2 START sql table model epl_core.fct_matches .............................. [RUN]
+[0m11:24:01.034563 [debug] [Thread-1 (]: Acquiring new bigquery connection 'model.ep_dbt.dim_players'
+[0m11:24:01.036247 [debug] [Thread-2 (]: Acquiring new bigquery connection 'model.ep_dbt.fct_matches'
+[0m11:24:01.036247 [debug] [Thread-1 (]: Began compiling node model.ep_dbt.dim_players
+[0m11:24:01.036247 [debug] [Thread-2 (]: Began compiling node model.ep_dbt.fct_matches
+[0m11:24:01.038088 [debug] [Thread-1 (]: Writing injected SQL for node "model.ep_dbt.dim_players"
+[0m11:24:01.047877 [debug] [Thread-2 (]: Writing injected SQL for node "model.ep_dbt.fct_matches"
+[0m11:24:01.071063 [debug] [Thread-1 (]: Began executing node model.ep_dbt.dim_players
+[0m11:24:01.081452 [debug] [Thread-2 (]: Began executing node model.ep_dbt.fct_matches
+[0m11:24:01.132255 [debug] [Thread-1 (]: Writing runtime sql for node "model.ep_dbt.dim_players"
+[0m11:24:01.135739 [debug] [Thread-2 (]: Writing runtime sql for node "model.ep_dbt.fct_matches"
+[0m11:24:01.140232 [debug] [Thread-1 (]: On model.ep_dbt.dim_players: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "ep_dbt", "target_name": "dev", "node_id": "model.ep_dbt.dim_players"} */
+
+  
+    
+
+    create or replace table `epl-data-pipeline-9999`.`epl_core`.`dim_players`
+      
+    
+    
+
+    
+    OPTIONS()
+    as (
+      
+
+select
+    player_id,
+    player_name,
+    nationality,
+    position,
+    player_club
+from `epl-data-pipeline-9999`.`epl_core`.`stg_players`
+    );
+  
+[0m11:24:01.141231 [debug] [Thread-2 (]: On model.ep_dbt.fct_matches: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "ep_dbt", "target_name": "dev", "node_id": "model.ep_dbt.fct_matches"} */
+
+  
+    
+
+    create or replace table `epl-data-pipeline-9999`.`epl_core`.`fct_matches`
+      
+    
+    
+
+    
+    OPTIONS()
+    as (
+      
+
+select
+    match_id,
+    home_team,
+    away_team,
+    home_goals,
+    away_goals,
+    date,
+    case 
+        when home_goals > away_goals then home_team
+        when away_goals > home_goals then away_team
+        else 'Draw'
+    end as winner
+from `epl-data-pipeline-9999`.`epl_core`.`stg_matches`
+    );
+  
+[0m11:24:01.141231 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m11:24:01.143141 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m11:24:03.544525 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=epl-data-pipeline-9999&j=bq:asia-southeast1:742ba2c2-2167-4eab-9306-9bb85488864a&page=queryresults
+[0m11:24:03.741897 [error] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=epl-data-pipeline-9999&j=bq:asia-southeast1:742ba2c2-2167-4eab-9306-9bb85488864a&page=queryresults
+[0m11:24:03.750004 [debug] [Thread-1 (]: Database Error in model dim_players (models\marts\dim\dim_players.sql)
+  Unrecognized name: player_id at [17:5]
+  compiled code at target\run\ep_dbt\models\marts\dim\dim_players.sql
+[0m11:24:03.750004 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e4f8b440-4d9b-41ff-904f-bead118f6b8d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024D2299CB50>]}
+[0m11:24:03.762035 [error] [Thread-1 (]: 1 of 2 ERROR creating sql table model epl_core.dim_players ..................... [[31mERROR[0m in 2.72s]
+[0m11:24:03.764304 [debug] [Thread-1 (]: Finished running node model.ep_dbt.dim_players
+[0m11:24:03.765607 [debug] [Thread-7 (]: Marking all children of 'model.ep_dbt.dim_players' to be skipped because of status 'error'.  Reason: Database Error in model dim_players (models\marts\dim\dim_players.sql)
+  Unrecognized name: player_id at [17:5]
+  compiled code at target\run\ep_dbt\models\marts\dim\dim_players.sql.
+[0m11:24:03.969500 [debug] [Thread-2 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=epl-data-pipeline-9999&j=bq:asia-southeast1:e026d363-bcfa-46d2-b19d-845e9a97ae76&page=queryresults
+[0m11:24:04.139521 [error] [Thread-2 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=epl-data-pipeline-9999&j=bq:asia-southeast1:e026d363-bcfa-46d2-b19d-845e9a97ae76&page=queryresults
+[0m11:24:04.139521 [debug] [Thread-2 (]: Database Error in model fct_matches (models\marts\fact\fct_matches.sql)
+  Unrecognized name: home_goals; Did you mean home_team? at [20:5]
+  compiled code at target\run\ep_dbt\models\marts\fact\fct_matches.sql
+[0m11:24:04.155170 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e4f8b440-4d9b-41ff-904f-bead118f6b8d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024D229A93D0>]}
+[0m11:24:04.156191 [error] [Thread-2 (]: 2 of 2 ERROR creating sql table model epl_core.fct_matches ..................... [[31mERROR[0m in 3.10s]
+[0m11:24:04.158325 [debug] [Thread-2 (]: Finished running node model.ep_dbt.fct_matches
+[0m11:24:04.159028 [debug] [Thread-7 (]: Marking all children of 'model.ep_dbt.fct_matches' to be skipped because of status 'error'.  Reason: Database Error in model fct_matches (models\marts\fact\fct_matches.sql)
+  Unrecognized name: home_goals; Did you mean home_team? at [20:5]
+  compiled code at target\run\ep_dbt\models\marts\fact\fct_matches.sql.
+[0m11:24:04.162090 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m11:24:04.204180 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:24:04.204180 [debug] [MainThread]: Connection 'list_epl-data-pipeline-9999' was properly closed.
+[0m11:24:04.204180 [debug] [MainThread]: Connection 'list_epl-data-pipeline-9999_epl_core' was properly closed.
+[0m11:24:04.204180 [debug] [MainThread]: Connection 'model.ep_dbt.dim_players' was properly closed.
+[0m11:24:04.207443 [debug] [MainThread]: Connection 'model.ep_dbt.fct_matches' was properly closed.
+[0m11:24:04.208334 [info ] [MainThread]: 
+[0m11:24:04.208334 [info ] [MainThread]: Finished running 2 table models in 0 hours 0 minutes and 5.85 seconds (5.85s).
+[0m11:24:04.208334 [debug] [MainThread]: Command end result
+[0m11:24:04.258447 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\manifest.json
+[0m11:24:04.263024 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\semantic_manifest.json
+[0m11:24:04.272658 [debug] [MainThread]: Wrote artifact RunExecutionResult to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\run_results.json
+[0m11:24:04.276531 [info ] [MainThread]: 
+[0m11:24:04.278050 [info ] [MainThread]: [31mCompleted with 2 errors, 0 partial successes, and 0 warnings:[0m
+[0m11:24:04.279815 [info ] [MainThread]: 
+[0m11:24:04.281270 [error] [MainThread]: [31mFailure in model dim_players (models\marts\dim\dim_players.sql)[0m
+[0m11:24:04.282672 [error] [MainThread]:   Database Error in model dim_players (models\marts\dim\dim_players.sql)
+  Unrecognized name: player_id at [17:5]
+  compiled code at target\run\ep_dbt\models\marts\dim\dim_players.sql
+[0m11:24:04.284360 [info ] [MainThread]: 
+[0m11:24:04.286234 [info ] [MainThread]:   compiled code at target\compiled\ep_dbt\models\marts\dim\dim_players.sql
+[0m11:24:04.288233 [info ] [MainThread]: 
+[0m11:24:04.290235 [error] [MainThread]: [31mFailure in model fct_matches (models\marts\fact\fct_matches.sql)[0m
+[0m11:24:04.293234 [error] [MainThread]:   Database Error in model fct_matches (models\marts\fact\fct_matches.sql)
+  Unrecognized name: home_goals; Did you mean home_team? at [20:5]
+  compiled code at target\run\ep_dbt\models\marts\fact\fct_matches.sql
+[0m11:24:04.295235 [info ] [MainThread]: 
+[0m11:24:04.297236 [info ] [MainThread]:   compiled code at target\compiled\ep_dbt\models\marts\fact\fct_matches.sql
+[0m11:24:04.298938 [info ] [MainThread]: 
+[0m11:24:04.300328 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=2 SKIP=0 NO-OP=0 TOTAL=2
+[0m11:24:04.303328 [debug] [MainThread]: Command `dbt run` failed at 11:24:04.303328 after 14.39 seconds
+[0m11:24:04.305389 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024D0C4759D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024D0C4752D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024D07A3CA10>]}
+[0m11:24:04.306561 [debug] [MainThread]: Flushing usage events
+[0m11:24:05.848712 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:30:42.717082 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C0C8EA690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C0C671110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C0C671490>]}
+
+
+============================== 14:30:42.732755 | 7e167fda-1681-420f-bc82-106a9f9baafc ==============================
+[0m14:30:42.732755 [info ] [MainThread]: Running with dbt=1.11.7
+[0m14:30:42.734624 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\25\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt run --select marts', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'D:\\Documents\\DE Zoomcamp 2026 Final Project\\ep_dbt\\logs'}
+[0m14:31:04.334148 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '7e167fda-1681-420f-bc82-106a9f9baafc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C21FA9ED0>]}
+[0m14:31:04.426651 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '7e167fda-1681-420f-bc82-106a9f9baafc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C07F4F110>]}
+[0m14:31:04.426651 [info ] [MainThread]: Registered adapter: bigquery=1.11.1
+[0m14:31:05.315880 [debug] [MainThread]: checksum: b80718358155fc17c3559352095564dd56ada1cc1a1c0ef2e62c857e71583775, vars: {}, profile: , target: , version: 1.11.7
+[0m14:31:06.207308 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 2 files changed.
+[0m14:31:06.215312 [debug] [MainThread]: Partial parsing: updated file: ep_dbt://models\marts\fact\fct_matches.sql
+[0m14:31:06.215312 [debug] [MainThread]: Partial parsing: updated file: ep_dbt://models\marts\dim\dim_players.sql
+[0m14:31:06.715165 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '7e167fda-1681-420f-bc82-106a9f9baafc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C0C73A7D0>]}
+[0m14:31:06.781703 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\manifest.json
+[0m14:31:06.798524 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\semantic_manifest.json
+[0m14:31:06.981834 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '7e167fda-1681-420f-bc82-106a9f9baafc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C22BB3790>]}
+[0m14:31:06.982997 [info ] [MainThread]: Found 5 models, 538 macros
+[0m14:31:06.982997 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7e167fda-1681-420f-bc82-106a9f9baafc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C22ABE890>]}
+[0m14:31:06.985498 [info ] [MainThread]: 
+[0m14:31:06.985498 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m14:31:06.985498 [info ] [MainThread]: 
+[0m14:31:06.990260 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m14:31:06.996715 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_epl-data-pipeline-9999'
+[0m14:31:06.998718 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:31:08.517381 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_epl-data-pipeline-9999_epl_core'
+[0m14:31:08.517381 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:31:09.749272 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7e167fda-1681-420f-bc82-106a9f9baafc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C22A8DC10>]}
+[0m14:31:09.749272 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:31:09.798514 [debug] [Thread-1 (]: Began running node model.ep_dbt.dim_players
+[0m14:31:09.798514 [debug] [Thread-2 (]: Began running node model.ep_dbt.fct_matches
+[0m14:31:09.798514 [info ] [Thread-1 (]: 1 of 2 START sql table model epl_core.dim_players .............................. [RUN]
+[0m14:31:09.798514 [info ] [Thread-2 (]: 2 of 2 START sql table model epl_core.fct_matches .............................. [RUN]
+[0m14:31:09.798514 [debug] [Thread-1 (]: Acquiring new bigquery connection 'model.ep_dbt.dim_players'
+[0m14:31:09.798514 [debug] [Thread-2 (]: Acquiring new bigquery connection 'model.ep_dbt.fct_matches'
+[0m14:31:09.798514 [debug] [Thread-1 (]: Began compiling node model.ep_dbt.dim_players
+[0m14:31:09.798514 [debug] [Thread-2 (]: Began compiling node model.ep_dbt.fct_matches
+[0m14:31:09.823088 [debug] [Thread-1 (]: Writing injected SQL for node "model.ep_dbt.dim_players"
+[0m14:31:09.827189 [debug] [Thread-2 (]: Writing injected SQL for node "model.ep_dbt.fct_matches"
+[0m14:31:09.829674 [debug] [Thread-1 (]: Began executing node model.ep_dbt.dim_players
+[0m14:31:09.865883 [debug] [Thread-1 (]: Writing runtime sql for node "model.ep_dbt.dim_players"
+[0m14:31:09.880585 [debug] [Thread-2 (]: Began executing node model.ep_dbt.fct_matches
+[0m14:31:09.882575 [debug] [Thread-2 (]: Writing runtime sql for node "model.ep_dbt.fct_matches"
+[0m14:31:09.882575 [debug] [Thread-1 (]: On model.ep_dbt.dim_players: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "ep_dbt", "target_name": "dev", "node_id": "model.ep_dbt.dim_players"} */
+
+  
+    
+
+    create or replace table `epl-data-pipeline-9999`.`epl_core`.`dim_players`
+      
+    
+    
+
+    
+    OPTIONS()
+    as (
+      
+
+select
+    player_name,
+    player_country,
+    player_club,
+    player_position,
+    player_image_url
+from `epl-data-pipeline-9999`.`epl_core`.`stg_players`
+    );
+  
+[0m14:31:09.888373 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m14:31:09.888373 [debug] [Thread-2 (]: On model.ep_dbt.fct_matches: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "ep_dbt", "target_name": "dev", "node_id": "model.ep_dbt.fct_matches"} */
+
+  
+    
+
+    create or replace table `epl-data-pipeline-9999`.`epl_core`.`fct_matches`
+      
+    
+    
+
+    
+    OPTIONS()
+    as (
+      
+
+select
+    match_id,
+    home_team,
+    away_team,
+    goals_home,
+    goals_away,
+    date,
+    time,
+    venue,
+    referee,
+    result
+from `epl-data-pipeline-9999`.`epl_core`.`stg_matches`
+    );
+  
+[0m14:31:09.932515 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m14:31:12.268952 [debug] [Thread-2 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=epl-data-pipeline-9999&j=bq:asia-southeast1:1fdc0bf4-ff59-4cee-9846-b66a6dc3abeb&page=queryresults
+[0m14:31:12.601451 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=epl-data-pipeline-9999&j=bq:asia-southeast1:85f645d7-dbb9-44d6-a9d5-ff558798201c&page=queryresults
+[0m14:31:14.015108 [debug] [Thread-2 (]: SQL status: OK in 1.747 seconds
+[0m14:31:14.480762 [debug] [Thread-1 (]: SQL status: OK in 1.881 seconds
+[0m14:31:16.314238 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7e167fda-1681-420f-bc82-106a9f9baafc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C234FB790>]}
+[0m14:31:16.314238 [info ] [Thread-1 (]: 1 of 2 OK created sql table model epl_core.dim_players ......................... [[32mCREATE TABLE (1.1k rows, 151.5 KiB processed)[0m in 6.52s]
+[0m14:31:16.314238 [debug] [Thread-1 (]: Finished running node model.ep_dbt.dim_players
+[0m14:31:16.515576 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7e167fda-1681-420f-bc82-106a9f9baafc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C2350A210>]}
+[0m14:31:16.522810 [info ] [Thread-2 (]: 2 of 2 OK created sql table model epl_core.fct_matches ......................... [[32mCREATE TABLE (380.0 rows, 51.3 KiB processed)[0m in 6.72s]
+[0m14:31:16.522810 [debug] [Thread-2 (]: Finished running node model.ep_dbt.fct_matches
+[0m14:31:16.522810 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m14:31:16.569359 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:31:16.570360 [debug] [MainThread]: Connection 'list_epl-data-pipeline-9999' was properly closed.
+[0m14:31:16.570769 [debug] [MainThread]: Connection 'list_epl-data-pipeline-9999_epl_core' was properly closed.
+[0m14:31:16.571360 [debug] [MainThread]: Connection 'model.ep_dbt.dim_players' was properly closed.
+[0m14:31:16.572360 [debug] [MainThread]: Connection 'model.ep_dbt.fct_matches' was properly closed.
+[0m14:31:16.572360 [info ] [MainThread]: 
+[0m14:31:16.573357 [info ] [MainThread]: Finished running 2 table models in 0 hours 0 minutes and 9.58 seconds (9.58s).
+[0m14:31:16.575358 [debug] [MainThread]: Command end result
+[0m14:31:16.641974 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\manifest.json
+[0m14:31:16.645976 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\semantic_manifest.json
+[0m14:31:16.653974 [debug] [MainThread]: Wrote artifact RunExecutionResult to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\run_results.json
+[0m14:31:16.654967 [info ] [MainThread]: 
+[0m14:31:16.655938 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m14:31:16.657405 [info ] [MainThread]: 
+[0m14:31:16.657937 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m14:31:16.660023 [debug] [MainThread]: Command `dbt run` succeeded at 14:31:16.660023 after 34.06 seconds
+[0m14:31:16.660023 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C06C23B90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C06C23B10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C0C8E2850>]}
+[0m14:31:16.661022 [debug] [MainThread]: Flushing usage events
+[0m14:31:19.971493 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:32:51.276419 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000253693EB450>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000253693EADD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000253693EAFD0>]}
+
+
+============================== 14:32:51.276419 | 39037679-17c3-4451-9b09-c23c377129e2 ==============================
+[0m14:32:51.276419 [info ] [MainThread]: Running with dbt=1.11.7
+[0m14:32:51.276419 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\25\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt run --select marts', 'indirect_selection': 'eager', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'D:\\Documents\\DE Zoomcamp 2026 Final Project\\ep_dbt\\logs'}
+[0m14:32:57.452344 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '39037679-17c3-4451-9b09-c23c377129e2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002537EB82CD0>]}
+[0m14:32:57.549600 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '39037679-17c3-4451-9b09-c23c377129e2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025364B4B3D0>]}
+[0m14:32:57.556643 [info ] [MainThread]: Registered adapter: bigquery=1.11.1
+[0m14:32:58.242201 [debug] [MainThread]: checksum: b80718358155fc17c3559352095564dd56ada1cc1a1c0ef2e62c857e71583775, vars: {}, profile: , target: , version: 1.11.7
+[0m14:32:58.382772 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m14:32:58.398440 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m14:32:58.398440 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m14:32:58.430259 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '39037679-17c3-4451-9b09-c23c377129e2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002537F430E10>]}
+[0m14:32:58.565825 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\manifest.json
+[0m14:32:58.565825 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\semantic_manifest.json
+[0m14:32:58.581419 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '39037679-17c3-4451-9b09-c23c377129e2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002537F3FE990>]}
+[0m14:32:58.596728 [info ] [MainThread]: Found 5 models, 538 macros
+[0m14:32:58.596728 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '39037679-17c3-4451-9b09-c23c377129e2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002537F44F550>]}
+[0m14:32:58.598608 [info ] [MainThread]: 
+[0m14:32:58.598608 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m14:32:58.598608 [info ] [MainThread]: 
+[0m14:32:58.598608 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m14:32:58.598608 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_epl-data-pipeline-9999'
+[0m14:32:58.598608 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:33:00.037034 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_epl-data-pipeline-9999_epl_core'
+[0m14:33:00.038045 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:33:01.186498 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '39037679-17c3-4451-9b09-c23c377129e2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002536963B290>]}
+[0m14:33:01.186498 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:33:01.224982 [debug] [Thread-1 (]: Began running node model.ep_dbt.dim_players
+[0m14:33:01.224982 [debug] [Thread-2 (]: Began running node model.ep_dbt.fct_matches
+[0m14:33:01.224982 [info ] [Thread-1 (]: 1 of 2 START sql table model epl_core.dim_players .............................. [RUN]
+[0m14:33:01.224982 [info ] [Thread-2 (]: 2 of 2 START sql table model epl_core.fct_matches .............................. [RUN]
+[0m14:33:01.240647 [debug] [Thread-1 (]: Acquiring new bigquery connection 'model.ep_dbt.dim_players'
+[0m14:33:01.241634 [debug] [Thread-2 (]: Acquiring new bigquery connection 'model.ep_dbt.fct_matches'
+[0m14:33:01.241634 [debug] [Thread-1 (]: Began compiling node model.ep_dbt.dim_players
+[0m14:33:01.241634 [debug] [Thread-2 (]: Began compiling node model.ep_dbt.fct_matches
+[0m14:33:01.241634 [debug] [Thread-1 (]: Writing injected SQL for node "model.ep_dbt.dim_players"
+[0m14:33:01.258728 [debug] [Thread-2 (]: Writing injected SQL for node "model.ep_dbt.fct_matches"
+[0m14:33:01.260319 [debug] [Thread-1 (]: Began executing node model.ep_dbt.dim_players
+[0m14:33:01.261308 [debug] [Thread-2 (]: Began executing node model.ep_dbt.fct_matches
+[0m14:33:01.280954 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m14:33:01.280954 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m14:33:02.689496 [debug] [Thread-2 (]: Writing runtime sql for node "model.ep_dbt.fct_matches"
+[0m14:33:02.689496 [debug] [Thread-1 (]: Writing runtime sql for node "model.ep_dbt.dim_players"
+[0m14:33:02.689496 [debug] [Thread-2 (]: On model.ep_dbt.fct_matches: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "ep_dbt", "target_name": "dev", "node_id": "model.ep_dbt.fct_matches"} */
+
+  
+    
+
+    create or replace table `epl-data-pipeline-9999`.`epl_core`.`fct_matches`
+      
+    
+    
+
+    
+    OPTIONS()
+    as (
+      
+
+select
+    match_id,
+    home_team,
+    away_team,
+    goals_home,
+    goals_away,
+    date,
+    time,
+    venue,
+    referee,
+    result
+from `epl-data-pipeline-9999`.`epl_core`.`stg_matches`
+    );
+  
+[0m14:33:02.703851 [debug] [Thread-1 (]: On model.ep_dbt.dim_players: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "ep_dbt", "target_name": "dev", "node_id": "model.ep_dbt.dim_players"} */
+
+  
+    
+
+    create or replace table `epl-data-pipeline-9999`.`epl_core`.`dim_players`
+      
+    
+    
+
+    
+    OPTIONS()
+    as (
+      
+
+select
+    player_name,
+    player_country,
+    player_club,
+    player_position,
+    player_image_url
+from `epl-data-pipeline-9999`.`epl_core`.`stg_players`
+    );
+  
+[0m14:33:03.913386 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=epl-data-pipeline-9999&j=bq:asia-southeast1:fc97c24d-89d1-49af-9593-b69c8abba13c&page=queryresults
+[0m14:33:03.928901 [debug] [Thread-2 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=epl-data-pipeline-9999&j=bq:asia-southeast1:14c8bee7-c1f2-4565-8645-ea7dd1c23757&page=queryresults
+[0m14:33:07.035415 [debug] [Thread-2 (]: SQL status: OK in 3.101 seconds
+[0m14:33:07.364142 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '39037679-17c3-4451-9b09-c23c377129e2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025366D25450>]}
+[0m14:33:07.366362 [info ] [Thread-2 (]: 2 of 2 OK created sql table model epl_core.fct_matches ......................... [[32mCREATE TABLE (380.0 rows, 51.3 KiB processed)[0m in 6.11s]
+[0m14:33:07.366362 [debug] [Thread-2 (]: Finished running node model.ep_dbt.fct_matches
+[0m14:33:10.735997 [debug] [Thread-1 (]: SQL status: OK in 6.815 seconds
+[0m14:33:10.947940 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '39037679-17c3-4451-9b09-c23c377129e2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002537EADE810>]}
+[0m14:33:10.947940 [info ] [Thread-1 (]: 1 of 2 OK created sql table model epl_core.dim_players ......................... [[32mCREATE TABLE (1.1k rows, 151.5 KiB processed)[0m in 9.72s]
+[0m14:33:10.947940 [debug] [Thread-1 (]: Finished running node model.ep_dbt.dim_players
+[0m14:33:10.952657 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m14:33:10.990517 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:33:10.990517 [debug] [MainThread]: Connection 'list_epl-data-pipeline-9999' was properly closed.
+[0m14:33:10.990517 [debug] [MainThread]: Connection 'list_epl-data-pipeline-9999_epl_core' was properly closed.
+[0m14:33:10.997358 [debug] [MainThread]: Connection 'model.ep_dbt.dim_players' was properly closed.
+[0m14:33:10.997358 [debug] [MainThread]: Connection 'model.ep_dbt.fct_matches' was properly closed.
+[0m14:33:10.998633 [info ] [MainThread]: 
+[0m14:33:10.998633 [info ] [MainThread]: Finished running 2 table models in 0 hours 0 minutes and 12.40 seconds (12.40s).
+[0m14:33:10.998633 [debug] [MainThread]: Command end result
+[0m14:33:11.031634 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\manifest.json
+[0m14:33:11.031634 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\semantic_manifest.json
+[0m14:33:11.046831 [debug] [MainThread]: Wrote artifact RunExecutionResult to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\run_results.json
+[0m14:33:11.046831 [info ] [MainThread]: 
+[0m14:33:11.046831 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m14:33:11.046831 [info ] [MainThread]: 
+[0m14:33:11.046831 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m14:33:11.053977 [debug] [MainThread]: Command `dbt run` succeeded at 14:33:11.053977 after 19.88 seconds
+[0m14:33:11.053977 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000253649A0C50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025368F75090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025367ECE690>]}
+[0m14:33:11.053977 [debug] [MainThread]: Flushing usage events
+[0m14:33:12.341242 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:34:53.696925 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BF297E8310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BF29A49C10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BF297E3010>]}
+
+
+============================== 14:34:53.701508 | 8029f6bd-acf5-47d9-b466-18372a505bc2 ==============================
+[0m14:34:53.701508 [info ] [MainThread]: Running with dbt=1.11.7
+[0m14:34:53.702739 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\25\\.dbt', 'invocation_command': 'dbt test', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'D:\\Documents\\DE Zoomcamp 2026 Final Project\\ep_dbt\\logs'}
+[0m14:35:00.583446 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '8029f6bd-acf5-47d9-b466-18372a505bc2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BF3EEB2810>]}
+[0m14:35:00.677243 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '8029f6bd-acf5-47d9-b466-18372a505bc2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BF24F4EFD0>]}
+[0m14:35:00.679974 [info ] [MainThread]: Registered adapter: bigquery=1.11.1
+[0m14:35:01.383933 [debug] [MainThread]: checksum: b80718358155fc17c3559352095564dd56ada1cc1a1c0ef2e62c857e71583775, vars: {}, profile: , target: , version: 1.11.7
+[0m14:35:01.623009 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m14:35:01.623009 [debug] [MainThread]: Partial parsing: added file: ep_dbt://models\staging\schema.yml
+[0m14:35:01.967989 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '8029f6bd-acf5-47d9-b466-18372a505bc2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BF3F9A04D0>]}
+[0m14:35:02.065795 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\manifest.json
+[0m14:35:02.068319 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\semantic_manifest.json
+[0m14:35:02.109369 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '8029f6bd-acf5-47d9-b466-18372a505bc2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BF3FE67410>]}
+[0m14:35:02.118852 [info ] [MainThread]: Found 5 models, 3 data tests, 538 macros
+[0m14:35:02.118852 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8029f6bd-acf5-47d9-b466-18372a505bc2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BF3F9A1A90>]}
+[0m14:35:02.118852 [info ] [MainThread]: 
+[0m14:35:02.118852 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m14:35:02.118852 [info ] [MainThread]: 
+[0m14:35:02.118852 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m14:35:02.132298 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_epl-data-pipeline-9999_epl_core'
+[0m14:35:02.134371 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:35:03.318112 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8029f6bd-acf5-47d9-b466-18372a505bc2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BF3EF81910>]}
+[0m14:35:03.318112 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:35:03.367066 [debug] [Thread-1 (]: Began running node test.ep_dbt.not_null_stg_matches_match_id.603ea5cb58
+[0m14:35:03.367066 [debug] [Thread-2 (]: Began running node test.ep_dbt.not_null_stg_players_player_name.03b41d3549
+[0m14:35:03.367066 [debug] [Thread-3 (]: Began running node test.ep_dbt.unique_stg_matches_match_id.367c54f188
+[0m14:35:03.367066 [info ] [Thread-1 (]: 1 of 3 START test not_null_stg_matches_match_id ................................ [RUN]
+[0m14:35:03.367066 [info ] [Thread-2 (]: 2 of 3 START test not_null_stg_players_player_name ............................. [RUN]
+[0m14:35:03.367066 [info ] [Thread-3 (]: 3 of 3 START test unique_stg_matches_match_id .................................. [RUN]
+[0m14:35:03.367066 [debug] [Thread-1 (]: Acquiring new bigquery connection 'test.ep_dbt.not_null_stg_matches_match_id.603ea5cb58'
+[0m14:35:03.381270 [debug] [Thread-2 (]: Acquiring new bigquery connection 'test.ep_dbt.not_null_stg_players_player_name.03b41d3549'
+[0m14:35:03.381270 [debug] [Thread-3 (]: Acquiring new bigquery connection 'test.ep_dbt.unique_stg_matches_match_id.367c54f188'
+[0m14:35:03.381270 [debug] [Thread-1 (]: Began compiling node test.ep_dbt.not_null_stg_matches_match_id.603ea5cb58
+[0m14:35:03.383904 [debug] [Thread-2 (]: Began compiling node test.ep_dbt.not_null_stg_players_player_name.03b41d3549
+[0m14:35:03.385770 [debug] [Thread-3 (]: Began compiling node test.ep_dbt.unique_stg_matches_match_id.367c54f188
+[0m14:35:03.404977 [debug] [Thread-1 (]: Writing injected SQL for node "test.ep_dbt.not_null_stg_matches_match_id.603ea5cb58"
+[0m14:35:03.412259 [debug] [Thread-2 (]: Writing injected SQL for node "test.ep_dbt.not_null_stg_players_player_name.03b41d3549"
+[0m14:35:03.420586 [debug] [Thread-3 (]: Writing injected SQL for node "test.ep_dbt.unique_stg_matches_match_id.367c54f188"
+[0m14:35:03.422588 [debug] [Thread-1 (]: Began executing node test.ep_dbt.not_null_stg_matches_match_id.603ea5cb58
+[0m14:35:03.423592 [debug] [Thread-2 (]: Began executing node test.ep_dbt.not_null_stg_players_player_name.03b41d3549
+[0m14:35:03.451304 [debug] [Thread-1 (]: Writing runtime sql for node "test.ep_dbt.not_null_stg_matches_match_id.603ea5cb58"
+[0m14:35:03.451304 [debug] [Thread-3 (]: Began executing node test.ep_dbt.unique_stg_matches_match_id.367c54f188
+[0m14:35:03.451304 [debug] [Thread-2 (]: Writing runtime sql for node "test.ep_dbt.not_null_stg_players_player_name.03b41d3549"
+[0m14:35:03.451304 [debug] [Thread-3 (]: Writing runtime sql for node "test.ep_dbt.unique_stg_matches_match_id.367c54f188"
+[0m14:35:03.463959 [debug] [Thread-1 (]: On test.ep_dbt.not_null_stg_matches_match_id.603ea5cb58: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "ep_dbt", "target_name": "dev", "node_id": "test.ep_dbt.not_null_stg_matches_match_id.603ea5cb58"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select match_id
+from `epl-data-pipeline-9999`.`epl_core`.`stg_matches`
+where match_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m14:35:03.463959 [debug] [Thread-2 (]: On test.ep_dbt.not_null_stg_players_player_name.03b41d3549: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "ep_dbt", "target_name": "dev", "node_id": "test.ep_dbt.not_null_stg_players_player_name.03b41d3549"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select player_name
+from `epl-data-pipeline-9999`.`epl_core`.`stg_players`
+where player_name is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m14:35:03.466620 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m14:35:03.467627 [debug] [Thread-3 (]: On test.ep_dbt.unique_stg_matches_match_id.367c54f188: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "ep_dbt", "target_name": "dev", "node_id": "test.ep_dbt.unique_stg_matches_match_id.367c54f188"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with dbt_test__target as (
+
+  select match_id as unique_field
+  from `epl-data-pipeline-9999`.`epl_core`.`stg_matches`
+  where match_id is not null
+
+)
+
+select
+    unique_field,
+    count(*) as n_records
+
+from dbt_test__target
+group by unique_field
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m14:35:03.468616 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m14:35:03.512891 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m14:35:05.789755 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=epl-data-pipeline-9999&j=bq:asia-southeast1:e53b337c-4f57-4d30-99fb-5a32cbafa996&page=queryresults
+[0m14:35:05.820999 [debug] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=epl-data-pipeline-9999&j=bq:asia-southeast1:d2668de8-e63d-42a4-acf8-3696a4d41b64&page=queryresults
+[0m14:35:05.833354 [debug] [Thread-2 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=epl-data-pipeline-9999&j=bq:asia-southeast1:c52cf5d3-fec9-40cb-a014-0d15fd587ccf&page=queryresults
+[0m14:35:06.041156 [debug] [Thread-3 (]: SQL status: OK in 0.210 seconds
+[0m14:35:06.041156 [debug] [Thread-1 (]: SQL status: OK in 0.244 seconds
+[0m14:35:06.104277 [debug] [Thread-2 (]: SQL status: OK in 0.273 seconds
+[0m14:35:06.542766 [info ] [Thread-2 (]: 2 of 3 PASS not_null_stg_players_player_name ................................... [[32mPASS[0m in 3.18s]
+[0m14:35:06.542766 [debug] [Thread-2 (]: Finished running node test.ep_dbt.not_null_stg_players_player_name.03b41d3549
+[0m14:35:06.575780 [info ] [Thread-1 (]: 1 of 3 PASS not_null_stg_matches_match_id ...................................... [[32mPASS[0m in 3.21s]
+[0m14:35:06.577815 [debug] [Thread-1 (]: Finished running node test.ep_dbt.not_null_stg_matches_match_id.603ea5cb58
+[0m14:35:06.594459 [info ] [Thread-3 (]: 3 of 3 PASS unique_stg_matches_match_id ........................................ [[32mPASS[0m in 3.21s]
+[0m14:35:06.601726 [debug] [Thread-3 (]: Finished running node test.ep_dbt.unique_stg_matches_match_id.367c54f188
+[0m14:35:06.606293 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m14:35:06.638701 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:35:06.638701 [debug] [MainThread]: Connection 'list_epl-data-pipeline-9999_epl_core' was properly closed.
+[0m14:35:06.649712 [debug] [MainThread]: Connection 'test.ep_dbt.not_null_stg_matches_match_id.603ea5cb58' was properly closed.
+[0m14:35:06.650734 [debug] [MainThread]: Connection 'test.ep_dbt.not_null_stg_players_player_name.03b41d3549' was properly closed.
+[0m14:35:06.651480 [debug] [MainThread]: Connection 'test.ep_dbt.unique_stg_matches_match_id.367c54f188' was properly closed.
+[0m14:35:06.651480 [info ] [MainThread]: 
+[0m14:35:06.653503 [info ] [MainThread]: Finished running 3 data tests in 0 hours 0 minutes and 4.53 seconds (4.53s).
+[0m14:35:06.653503 [debug] [MainThread]: Command end result
+[0m14:35:06.717987 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\manifest.json
+[0m14:35:06.722841 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\semantic_manifest.json
+[0m14:35:06.725310 [debug] [MainThread]: Wrote artifact RunExecutionResult to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\run_results.json
+[0m14:35:06.733165 [info ] [MainThread]: 
+[0m14:35:06.734382 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m14:35:06.736377 [info ] [MainThread]: 
+[0m14:35:06.737377 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=3
+[0m14:35:06.739032 [debug] [MainThread]: Command `dbt test` succeeded at 14:35:06.739032 after 13.15 seconds
+[0m14:35:06.739032 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BF29A72D90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BF29375090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BF23873C90>]}
+[0m14:35:06.740028 [debug] [MainThread]: Flushing usage events
+[0m14:35:08.034488 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:35:26.199791 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C5058ED390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C5058EC810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C5058EFF10>]}
+
+
+============================== 14:35:26.204848 | b85e7439-b2d6-4766-90c2-6fbfee564136 ==============================
+[0m14:35:26.204848 [info ] [MainThread]: Running with dbt=1.11.7
+[0m14:35:26.206495 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\25\\.dbt', 'use_colors': 'True', 'invocation_command': 'dbt docs generate', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'D:\\Documents\\DE Zoomcamp 2026 Final Project\\ep_dbt\\logs'}
+[0m14:35:32.879709 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b85e7439-b2d6-4766-90c2-6fbfee564136', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C51B0AA150>]}
+[0m14:35:32.975487 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b85e7439-b2d6-4766-90c2-6fbfee564136', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C50104E850>]}
+[0m14:35:32.975487 [info ] [MainThread]: Registered adapter: bigquery=1.11.1
+[0m14:35:33.663466 [debug] [MainThread]: checksum: b80718358155fc17c3559352095564dd56ada1cc1a1c0ef2e62c857e71583775, vars: {}, profile: , target: , version: 1.11.7
+[0m14:35:33.840707 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m14:35:33.840707 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m14:35:33.840707 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m14:35:33.952756 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b85e7439-b2d6-4766-90c2-6fbfee564136', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C51B8A14D0>]}
+[0m14:35:34.001304 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b85e7439-b2d6-4766-90c2-6fbfee564136', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C505814ED0>]}
+[0m14:35:34.005535 [info ] [MainThread]: Found 5 models, 3 data tests, 538 macros
+[0m14:35:34.007193 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b85e7439-b2d6-4766-90c2-6fbfee564136', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C51B0C7E10>]}
+[0m14:35:34.007511 [info ] [MainThread]: 
+[0m14:35:34.007511 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m14:35:34.011243 [info ] [MainThread]: 
+[0m14:35:34.013737 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m14:35:34.020171 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_epl-data-pipeline-9999_epl_core'
+[0m14:35:34.021184 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:35:35.159173 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b85e7439-b2d6-4766-90c2-6fbfee564136', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C504CCD990>]}
+[0m14:35:35.159173 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:35:35.205448 [debug] [Thread-1 (]: Began running node model.ep_dbt.stg_matches
+[0m14:35:35.205448 [debug] [Thread-2 (]: Began running node model.ep_dbt.stg_player_stats
+[0m14:35:35.205448 [debug] [Thread-3 (]: Began running node model.ep_dbt.stg_players
+[0m14:35:35.205448 [debug] [Thread-1 (]: Acquiring new bigquery connection 'model.ep_dbt.stg_matches'
+[0m14:35:35.205448 [debug] [Thread-2 (]: Acquiring new bigquery connection 'model.ep_dbt.stg_player_stats'
+[0m14:35:35.205448 [debug] [Thread-3 (]: Acquiring new bigquery connection 'model.ep_dbt.stg_players'
+[0m14:35:35.205448 [debug] [Thread-1 (]: Began compiling node model.ep_dbt.stg_matches
+[0m14:35:35.219579 [debug] [Thread-2 (]: Began compiling node model.ep_dbt.stg_player_stats
+[0m14:35:35.219579 [debug] [Thread-3 (]: Began compiling node model.ep_dbt.stg_players
+[0m14:35:35.219579 [debug] [Thread-1 (]: Writing injected SQL for node "model.ep_dbt.stg_matches"
+[0m14:35:35.219579 [debug] [Thread-2 (]: Writing injected SQL for node "model.ep_dbt.stg_player_stats"
+[0m14:35:35.235283 [debug] [Thread-3 (]: Writing injected SQL for node "model.ep_dbt.stg_players"
+[0m14:35:35.240039 [debug] [Thread-1 (]: Began executing node model.ep_dbt.stg_matches
+[0m14:35:35.241361 [debug] [Thread-2 (]: Began executing node model.ep_dbt.stg_player_stats
+[0m14:35:35.241361 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m14:35:35.241361 [debug] [Thread-3 (]: Began executing node model.ep_dbt.stg_players
+[0m14:35:35.241361 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m14:35:35.277174 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m14:35:35.277174 [debug] [Thread-1 (]: Finished running node model.ep_dbt.stg_matches
+[0m14:35:35.317819 [debug] [Thread-2 (]: Finished running node model.ep_dbt.stg_player_stats
+[0m14:35:35.363674 [debug] [Thread-3 (]: Finished running node model.ep_dbt.stg_players
+[0m14:35:35.365228 [debug] [Thread-4 (]: Began running node model.ep_dbt.fct_matches
+[0m14:35:35.365228 [debug] [Thread-1 (]: Began running node test.ep_dbt.not_null_stg_matches_match_id.603ea5cb58
+[0m14:35:35.365228 [debug] [Thread-2 (]: Began running node test.ep_dbt.unique_stg_matches_match_id.367c54f188
+[0m14:35:35.365228 [debug] [Thread-3 (]: Began running node model.ep_dbt.dim_players
+[0m14:35:35.365228 [debug] [Thread-4 (]: Acquiring new bigquery connection 'model.ep_dbt.fct_matches'
+[0m14:35:35.365228 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.ep_dbt.stg_matches, now test.ep_dbt.not_null_stg_matches_match_id.603ea5cb58)
+[0m14:35:35.371135 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.ep_dbt.stg_player_stats, now test.ep_dbt.unique_stg_matches_match_id.367c54f188)
+[0m14:35:35.371135 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.ep_dbt.stg_players, now model.ep_dbt.dim_players)
+[0m14:35:35.372756 [debug] [Thread-4 (]: Began compiling node model.ep_dbt.fct_matches
+[0m14:35:35.372756 [debug] [Thread-1 (]: Began compiling node test.ep_dbt.not_null_stg_matches_match_id.603ea5cb58
+[0m14:35:35.374479 [debug] [Thread-2 (]: Began compiling node test.ep_dbt.unique_stg_matches_match_id.367c54f188
+[0m14:35:35.374479 [debug] [Thread-3 (]: Began compiling node model.ep_dbt.dim_players
+[0m14:35:35.375990 [debug] [Thread-4 (]: Writing injected SQL for node "model.ep_dbt.fct_matches"
+[0m14:35:35.380741 [debug] [Thread-1 (]: Writing injected SQL for node "test.ep_dbt.not_null_stg_matches_match_id.603ea5cb58"
+[0m14:35:35.396966 [debug] [Thread-2 (]: Writing injected SQL for node "test.ep_dbt.unique_stg_matches_match_id.367c54f188"
+[0m14:35:35.396966 [debug] [Thread-3 (]: Writing injected SQL for node "model.ep_dbt.dim_players"
+[0m14:35:35.405514 [debug] [Thread-4 (]: Began executing node model.ep_dbt.fct_matches
+[0m14:35:35.407183 [debug] [Thread-1 (]: Began executing node test.ep_dbt.not_null_stg_matches_match_id.603ea5cb58
+[0m14:35:35.407183 [debug] [Thread-2 (]: Began executing node test.ep_dbt.unique_stg_matches_match_id.367c54f188
+[0m14:35:35.408732 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m14:35:35.408732 [debug] [Thread-3 (]: Began executing node model.ep_dbt.dim_players
+[0m14:35:35.408732 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:35:35.412276 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m14:35:35.444461 [debug] [Thread-4 (]: Finished running node model.ep_dbt.fct_matches
+[0m14:35:35.444461 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m14:35:35.484654 [debug] [Thread-1 (]: Finished running node test.ep_dbt.not_null_stg_matches_match_id.603ea5cb58
+[0m14:35:35.521425 [debug] [Thread-2 (]: Finished running node test.ep_dbt.unique_stg_matches_match_id.367c54f188
+[0m14:35:35.521425 [debug] [Thread-4 (]: Began running node test.ep_dbt.not_null_stg_players_player_name.03b41d3549
+[0m14:35:35.568321 [debug] [Thread-3 (]: Finished running node model.ep_dbt.dim_players
+[0m14:35:35.568321 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.ep_dbt.fct_matches, now test.ep_dbt.not_null_stg_players_player_name.03b41d3549)
+[0m14:35:35.577429 [debug] [Thread-4 (]: Began compiling node test.ep_dbt.not_null_stg_players_player_name.03b41d3549
+[0m14:35:35.577788 [debug] [Thread-4 (]: Writing injected SQL for node "test.ep_dbt.not_null_stg_players_player_name.03b41d3549"
+[0m14:35:35.577788 [debug] [Thread-4 (]: Began executing node test.ep_dbt.not_null_stg_players_player_name.03b41d3549
+[0m14:35:35.577788 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m14:35:35.617401 [debug] [Thread-4 (]: Finished running node test.ep_dbt.not_null_stg_players_player_name.03b41d3549
+[0m14:35:35.617401 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:35:35.617401 [debug] [MainThread]: Connection 'list_epl-data-pipeline-9999_epl_core' was properly closed.
+[0m14:35:35.617401 [debug] [MainThread]: Connection 'test.ep_dbt.not_null_stg_matches_match_id.603ea5cb58' was properly closed.
+[0m14:35:35.617401 [debug] [MainThread]: Connection 'test.ep_dbt.unique_stg_matches_match_id.367c54f188' was properly closed.
+[0m14:35:35.617401 [debug] [MainThread]: Connection 'model.ep_dbt.dim_players' was properly closed.
+[0m14:35:35.628895 [debug] [MainThread]: Connection 'test.ep_dbt.not_null_stg_players_player_name.03b41d3549' was properly closed.
+[0m14:35:35.628895 [debug] [MainThread]: Command end result
+[0m14:35:35.707097 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\manifest.json
+[0m14:35:35.707097 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\semantic_manifest.json
+[0m14:35:35.719864 [debug] [MainThread]: Wrote artifact RunExecutionResult to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\run_results.json
+[0m14:35:38.279560 [debug] [MainThread]: Acquiring new bigquery connection 'generate_catalog'
+[0m14:35:38.279560 [info ] [MainThread]: Building catalog
+[0m14:35:38.290122 [debug] [ThreadPool]: Acquiring new bigquery connection 'epl-data-pipeline-9999.information_schema'
+[0m14:35:38.315990 [debug] [ThreadPool]: On epl-data-pipeline-9999.information_schema: /* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "ep_dbt", "target_name": "dev", "connection_name": "epl-data-pipeline-9999.information_schema"} */
+
+    with
+                table_shards_stage as (
+    select
+        tables.project_id as table_catalog,
+        tables.dataset_id as table_schema,
+        coalesce(REGEXP_EXTRACT(tables.table_id, '^(.+)[0-9]{8}$'), tables.table_id) as table_name,
+        tables.table_id as shard_name,
+        REGEXP_EXTRACT(tables.table_id, '^.+([0-9]{8})$') as shard_index,
+        REGEXP_CONTAINS(tables.table_id, '^.+[0-9]{8}$') and tables.type = 1 as is_date_shard,
+        case
+            when materialized_views.table_name is not null then 'materialized view'
+            when tables.type = 1 then 'table'
+            when tables.type = 2 then 'view'
+            else 'external'
+        end as table_type,
+        tables.type = 1 as is_table,
+        JSON_VALUE(table_description.option_value) as table_comment,
+        tables.size_bytes,
+        tables.row_count
+    from `epl-data-pipeline-9999`.`epl_core`.__TABLES__ tables
+    left join `epl-data-pipeline-9999`.`epl_core`.INFORMATION_SCHEMA.MATERIALIZED_VIEWS materialized_views
+        on materialized_views.table_catalog = tables.project_id
+        and materialized_views.table_schema = tables.dataset_id
+        and materialized_views.table_name = tables.table_id
+    left join `epl-data-pipeline-9999`.`epl_core`.INFORMATION_SCHEMA.TABLE_OPTIONS table_description
+        on table_description.table_catalog = tables.project_id
+        and table_description.table_schema = tables.dataset_id
+        and table_description.table_name = tables.table_id
+        and table_description.option_name = 'description'
+),
+                table_shards as (
+                    select * from table_shards_stage
+                    where ((
+                                upper(table_schema) = upper('epl_core')
+                            and upper(table_name) = upper('dim_players')
+                            ) or (
+                                upper(table_schema) = upper('epl_core')
+                            and upper(table_name) = upper('fct_matches')
+                            ) or (
+                                upper(table_schema) = upper('epl_core')
+                            and upper(table_name) = upper('stg_matches')
+                            ) or (
+                                upper(table_schema) = upper('epl_core')
+                            and upper(table_name) = upper('stg_players')
+                            ) or (
+                                upper(table_schema) = upper('epl_core')
+                            and upper(table_name) = upper('stg_player_stats')
+                            ))
+                ),
+                tables as (
+    select distinct
+        table_catalog,
+        table_schema,
+        table_name,
+        is_date_shard,
+        table_type,
+        is_table,
+        table_comment
+    from table_shards
+),
+                table_stats as (
+    select
+        table_catalog,
+        table_schema,
+        table_name,
+        max(shard_name) as latest_shard_name,
+        min(shard_index) as shard_min,
+        max(shard_index) as shard_max,
+        count(shard_index) as shard_count,
+        sum(size_bytes) as size_bytes,
+        sum(row_count) as row_count
+    from table_shards
+    group by 1, 2, 3
+),
+
+                columns as (
+    select
+        columns.table_catalog,
+        columns.table_schema,
+        columns.table_name as shard_name,
+        coalesce(paths.field_path, '<unknown>') as column_name,
+        -- invent a row number to account for nested fields
+        -- BQ does not treat these nested properties as independent fields
+        row_number() over (
+            partition by
+                columns.table_catalog,
+                columns.table_schema,
+                columns.table_name
+            order by
+                columns.ordinal_position,
+                paths.field_path
+        ) as column_index,
+        coalesce(paths.data_type, '<unknown>') as column_type,
+        paths.description as column_comment,
+        case when columns.is_partitioning_column = 'YES' then 1 else 0 end as is_partitioning_column,
+        case when columns.is_partitioning_column = 'YES' then paths.field_path end as partition_column,
+        case when columns.clustering_ordinal_position is not null then 1 else 0 end as is_clustering_column,
+        case when columns.clustering_ordinal_position is not null then paths.field_path end as cluster_column,
+        columns.clustering_ordinal_position
+    from `epl-data-pipeline-9999`.`epl_core`.INFORMATION_SCHEMA.COLUMNS columns
+    join `epl-data-pipeline-9999`.`epl_core`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS paths
+        on paths.table_catalog = columns.table_catalog
+        and paths.table_schema = columns.table_schema
+        and paths.table_name = columns.table_name
+        and paths.column_name = columns.column_name
+    where columns.ordinal_position is not null
+),
+                column_stats as (
+    select
+        table_catalog,
+        table_schema,
+        shard_name,
+        max(is_partitioning_column) = 1 as is_partitioned,
+        max(partition_column) as partition_column,
+        max(is_clustering_column) = 1 as is_clustered,
+        array_to_string(
+            array_agg(
+                cluster_column ignore nulls
+                order by clustering_ordinal_position
+            ), ', '
+        ) as clustering_columns
+    from columns
+    group by 1, 2, 3
+)
+
+            
+    select
+        tables.table_catalog as table_database,
+        tables.table_schema,
+        case
+            when tables.is_date_shard then concat(tables.table_name, '*')
+            else tables.table_name
+        end as table_name,
+        tables.table_type,
+        tables.table_comment,
+        -- coalesce column metadata fields to ensure they are non-null for catalog generation
+        -- external table columns are not present in COLUMN_FIELD_PATHS
+        coalesce(columns.column_name, '<unknown>') as column_name,
+        coalesce(columns.column_index, 1) as column_index,
+        coalesce(columns.column_type, '<unknown>') as column_type,
+        coalesce(columns.column_comment, '') as column_comment,
+
+        'Shard count' as `stats__date_shards__label`,
+        table_stats.shard_count as `stats__date_shards__value`,
+        'The number of date shards in this table' as `stats__date_shards__description`,
+        tables.is_date_shard as `stats__date_shards__include`,
+
+        'Shard (min)' as `stats__date_shard_min__label`,
+        table_stats.shard_min as `stats__date_shard_min__value`,
+        'The first date shard in this table' as `stats__date_shard_min__description`,
+        tables.is_date_shard as `stats__date_shard_min__include`,
+
+        'Shard (max)' as `stats__date_shard_max__label`,
+        table_stats.shard_max as `stats__date_shard_max__value`,
+        'The last date shard in this table' as `stats__date_shard_max__description`,
+        tables.is_date_shard as `stats__date_shard_max__include`,
+
+        '# Rows' as `stats__num_rows__label`,
+        table_stats.row_count as `stats__num_rows__value`,
+        'Approximate count of rows in this table' as `stats__num_rows__description`,
+        tables.is_table as `stats__num_rows__include`,
+
+        'Approximate Size' as `stats__num_bytes__label`,
+        table_stats.size_bytes as `stats__num_bytes__value`,
+        'Approximate size of table as reported by BigQuery' as `stats__num_bytes__description`,
+        tables.is_table as `stats__num_bytes__include`,
+
+        'Partitioned By' as `stats__partitioning_type__label`,
+        column_stats.partition_column as `stats__partitioning_type__value`,
+        'The partitioning column for this table' as `stats__partitioning_type__description`,
+        column_stats.is_partitioned as `stats__partitioning_type__include`,
+
+        'Clustered By' as `stats__clustering_fields__label`,
+        column_stats.clustering_columns as `stats__clustering_fields__value`,
+        'The clustering columns for this table' as `stats__clustering_fields__description`,
+        column_stats.is_clustered as `stats__clustering_fields__include`
+
+    from tables
+    join table_stats
+        on table_stats.table_catalog = tables.table_catalog
+        and table_stats.table_schema = tables.table_schema
+        and table_stats.table_name = tables.table_name
+    left join column_stats
+        on column_stats.table_catalog = tables.table_catalog
+        and column_stats.table_schema = tables.table_schema
+        and column_stats.shard_name = table_stats.latest_shard_name
+    left join columns
+        on columns.table_catalog = tables.table_catalog
+        and columns.table_schema = tables.table_schema
+        and columns.shard_name = table_stats.latest_shard_name
+
+  
+[0m14:35:38.315990 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:35:39.660564 [debug] [ThreadPool]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=epl-data-pipeline-9999&j=bq:asia-southeast1:a34f6df1-0401-4ea3-989b-e73059fc1523&page=queryresults
+[0m14:35:41.039711 [debug] [ThreadPool]: SQL status: OK in 1.365 seconds
+[0m14:35:41.517425 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:35:41.586170 [debug] [MainThread]: Wrote artifact CatalogArtifact to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\catalog.json
+[0m14:35:41.616810 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\manifest.json
+[0m14:35:41.619763 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\semantic_manifest.json
+[0m14:35:41.621500 [info ] [MainThread]: Catalog written to D:\Documents\DE Zoomcamp 2026 Final Project\ep_dbt\target\catalog.json
+[0m14:35:41.623258 [debug] [MainThread]: Command `dbt docs generate` succeeded at 14:35:41.623258 after 15.53 seconds
+[0m14:35:41.624216 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m14:35:41.624605 [debug] [MainThread]: Connection 'epl-data-pipeline-9999.information_schema' was properly closed.
+[0m14:35:41.625259 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C50597FC50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C5054753D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C51A459450>]}
+[0m14:35:41.626257 [debug] [MainThread]: Flushing usage events
+[0m14:35:42.906214 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:35:54.830289 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020EA2FEFD10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020EA2B75150>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020EA2FEC450>]}
+
+
+============================== 14:35:54.835618 | cf08d752-55d8-44f7-8343-7f2c247852c4 ==============================
+[0m14:35:54.835618 [info ] [MainThread]: Running with dbt=1.11.7
+[0m14:35:54.837069 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\25\\.dbt', 'invocation_command': 'dbt docs serve', 'indirect_selection': 'eager', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'D:\\Documents\\DE Zoomcamp 2026 Final Project\\ep_dbt\\logs'}
+[0m14:36:01.293754 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'cf08d752-55d8-44f7-8343-7f2c247852c4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020EB8A06F10>]}
+[0m14:36:01.388633 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'cf08d752-55d8-44f7-8343-7f2c247852c4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020E9E74AD10>]}
