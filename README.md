@@ -153,7 +153,7 @@ DE Zoomcamp 2026 Final Project/
 |
 |-- datasets 9 seasons/         # Local copies of raw CSV/JSON files
 |
-|-- epl-data-pipeline-9999-de6a9c38ce47.json   # GCP Service Account key (DO NOT COMMIT)
+|-- epl-data-pipeline-9999-de6a9c38ce47.json   # GCP Service Account key 
 |-- .gitignore                  # Excludes credentials, terraform state files
 |-- README.md                   # This file
 
@@ -257,21 +257,21 @@ To impress reviewers, the dashboard incorporates:
 - Text Annotations: Small text boxes explaining the data pipeline lineage so reviewers know the data was transformed via dbt.
 
 Page 1: League Overview
-   - Contains exactly what fans want to see first: League Tables ranking the best teams by points.
-   - Includes scorecards averaging total goals across Matchweeks and calculating home-win percentages.
-   - Line charts that illustrate the intensity of goals over time.
+   - Features Scorecards tracking fundamental metrics: Games Played, Total Goals, and Avg Goals Per Game.
+   - Contains exactly what fans want to see first: A comprehensive League Table ranking the best teams by points across 9 seasons.
+   - Highlights the "Top 5 Attacking & Defensive Lineups" using a comparative Bar Chart for Goals For vs Goals Against.
 
 Page 2: Team Analytics
-   - Dives deep into team performances using the dim_teams table.
-   - Compares Expected Goals (xG) against Actual Goals using a bar chart to identify the most clinical teams.
-   - Analyzes team aggressiveness with a stacked bar chart of yellow and red cards.
+   - Dives deep into tactical team performances using the dim_teams table.
+   - Analyzes attacking efficiency with a Scatter Plot (Bubble Chart) mapping Total Shots against Shots on Target, sized by total Goals Scored.
+   - Analyzes team discipline and aggressiveness with a Stacked Bar Chart tracking Yellow vs Red Cards per club.
 
 Page 3: Player Stats
-   - Detailed analysis identifying star players from the dim_players table.
-   - Points out the top scorers and top assist contributors.
-   - Analyzes shooting efficiency metrics by cross-checking goals scored versus shots taken on target.
+   - Narrows the focus specifically to the 2024-2025 season to identify current star players from the dim_players table.
+   - Features a 'Top Scores & Assists' Heatmap Table ranking attacking contributions.
+   - Analyzes striking efficiency with a Scatter Plot comparing Shots on Target vs Goal Contributions, including a targeted annotation explaining a Data Anomaly regarding scraped goal values for newly promoted teams.
 
-Live Dashboard: [Insert your Looker Studio link here after publishing]
+Live Dashboard: [View the Interactive Dashboard Here](https://lookerstudio.google.com/reporting/1934755d-8c3c-4059-8bd9-5364b4e85ca8)
 
 To publish Looker Studio: click Share -> Manage access -> Anyone with the link can view -> copy the link.
 
