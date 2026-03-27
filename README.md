@@ -126,6 +126,7 @@ What the data contains:
 
 ## Project Structure
 
+```text
 DE Zoomcamp 2026 Final Project/
 |
 |-- terraform/                  # Infrastructure as Code
@@ -153,9 +154,10 @@ DE Zoomcamp 2026 Final Project/
 |
 |-- datasets 9 seasons/         # Local copies of raw CSV/JSON files
 |
-|-- epl-data-pipeline-9999-de6a9c38ce47.json   # GCP Service Account key 
+|-- epl-data-pipeline-9999-de6a9c38ce47.json   # GCP Service Account key
 |-- .gitignore                  # Excludes credentials, terraform state files
 |-- README.md                   # This file
+```
 
 Important note about BigQuery datasets:
 This project uses two separate BigQuery datasets, not one:
