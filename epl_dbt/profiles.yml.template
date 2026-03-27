@@ -1,0 +1,14 @@
+epl_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: epl-data-pipeline-9999
+      dataset: epl_core
+      location: asia-southeast1
+      keyfile: "{{ env_var('DBT_KEYFILE_PATH', 'path/to/epl-data-pipeline-9999-de6a9c38ce47.json') }}"
+      threads: 4
+      timeout_seconds: 300
+      priority: interactive
+      retries: 1

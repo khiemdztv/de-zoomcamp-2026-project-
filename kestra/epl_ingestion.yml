@@ -1,0 +1,282 @@
+id: epl_ingestion
+namespace: epl
+
+description: |
+  EPL Data Pipeline — Ingestion Flow
+  Uploads all local CSV and JSON data files to Google Cloud Storage,
+  then loads them into BigQuery epl_raw dataset as raw tables.
+
+variables:
+  project_id: "epl-data-pipeline-9999"
+  bucket_name: "epl-datalake-9999"
+  gcp_key_path: "{{ secret('GCP_SERVICE_ACCOUNT_JSON') }}"
+  bq_dataset: "epl_raw"
+  bq_location: "asia-southeast1"
+  # IMPORTANT: Set this to the absolute path of your project root on the machine running Kestra
+  base_path: "/path/to/DE Zoomcamp 2026 Final Project"
+
+tasks:
+
+  # ─────────────────────────────────────────────────────────────────────────────
+  # PHASE 1: Upload club stats (9 seasons) → GCS
+  # ─────────────────────────────────────────────────────────────────────────────
+
+  - id: upload_club_stats_2016
+    type: io.kestra.plugin.gcp.gcs.Upload
+    serviceAccount: "{{ vars.gcp_key_path }}"
+    from: "{{ vars.base_path }}/datasets 9 seasons/club_stats/2016_season_club_stats.csv"
+    to: "gs://{{ vars.bucket_name }}/raw/club_stats/2016_season_club_stats.csv"
+
+  - id: upload_club_stats_2017
+    type: io.kestra.plugin.gcp.gcs.Upload
+    serviceAccount: "{{ vars.gcp_key_path }}"
+    from: "{{ vars.base_path }}/datasets 9 seasons/club_stats/2017_season_club_stats.csv"
+    to: "gs://{{ vars.bucket_name }}/raw/club_stats/2017_season_club_stats.csv"
+
+  - id: upload_club_stats_2018
+    type: io.kestra.plugin.gcp.gcs.Upload
+    serviceAccount: "{{ vars.gcp_key_path }}"
+    from: "{{ vars.base_path }}/datasets 9 seasons/club_stats/2018_season_club_stats.csv"
+    to: "gs://{{ vars.bucket_name }}/raw/club_stats/2018_season_club_stats.csv"
+
+  - id: upload_club_stats_2019
+    type: io.kestra.plugin.gcp.gcs.Upload
+    serviceAccount: "{{ vars.gcp_key_path }}"
+    from: "{{ vars.base_path }}/datasets 9 seasons/club_stats/2019_season_club_stats.csv"
+    to: "gs://{{ vars.bucket_name }}/raw/club_stats/2019_season_club_stats.csv"
+
+  - id: upload_club_stats_2020
+    type: io.kestra.plugin.gcp.gcs.Upload
+    serviceAccount: "{{ vars.gcp_key_path }}"
+    from: "{{ vars.base_path }}/datasets 9 seasons/club_stats/2020_season_club_stats.csv"
+    to: "gs://{{ vars.bucket_name }}/raw/club_stats/2020_season_club_stats.csv"
+
+  - id: upload_club_stats_2021
+    type: io.kestra.plugin.gcp.gcs.Upload
+    serviceAccount: "{{ vars.gcp_key_path }}"
+    from: "{{ vars.base_path }}/datasets 9 seasons/club_stats/2021_season_club_stats.csv"
+    to: "gs://{{ vars.bucket_name }}/raw/club_stats/2021_season_club_stats.csv"
+
+  - id: upload_club_stats_2022
+    type: io.kestra.plugin.gcp.gcs.Upload
+    serviceAccount: "{{ vars.gcp_key_path }}"
+    from: "{{ vars.base_path }}/datasets 9 seasons/club_stats/2022_season_club_stats.csv"
+    to: "gs://{{ vars.bucket_name }}/raw/club_stats/2022_season_club_stats.csv"
+
+  - id: upload_club_stats_2023
+    type: io.kestra.plugin.gcp.gcs.Upload
+    serviceAccount: "{{ vars.gcp_key_path }}"
+    from: "{{ vars.base_path }}/datasets 9 seasons/club_stats/2023_season_club_stats.csv"
+    to: "gs://{{ vars.bucket_name }}/raw/club_stats/2023_season_club_stats.csv"
+
+  - id: upload_club_stats_2024
+    type: io.kestra.plugin.gcp.gcs.Upload
+    serviceAccount: "{{ vars.gcp_key_path }}"
+    from: "{{ vars.base_path }}/datasets 9 seasons/club_stats/2024_season_club_stats.csv"
+    to: "gs://{{ vars.bucket_name }}/raw/club_stats/2024_season_club_stats.csv"
+
+  # ─────────────────────────────────────────────────────────────────────────────
+  # PHASE 2: Load club_stats into BigQuery — create consolidated raw table
+  # Strategy: load each season CSV into its own partition table, then use BQ
+  # to merge. Simpler: use a Python script task or bq load with schema auto-detect.
+  # ─────────────────────────────────────────────────────────────────────────────
+
+  - id: load_club_stats_to_bq
+    type: io.kestra.plugin.gcp.bigquery.LoadFromGcs
+    serviceAccount: "{{ vars.gcp_key_path }}"
+    projectId: "{{ vars.project_id }}"
+    destinationTable: "{{ vars.project_id }}.{{ vars.bq_dataset }}.raw_club_stats"
+    format: CSV
+    autodetect: true
+    skipLeadingRows: 1
+    writeDisposition: WRITE_TRUNCATE
+    createDisposition: CREATE_IF_NEEDED
+    location: "{{ vars.bq_location }}"
+    from:
+      - "gs://{{ vars.bucket_name }}/raw/club_stats/2016_season_club_stats.csv"
+      - "gs://{{ vars.bucket_name }}/raw/club_stats/2017_season_club_stats.csv"
+      - "gs://{{ vars.bucket_name }}/raw/club_stats/2018_season_club_stats.csv"
+      - "gs://{{ vars.bucket_name }}/raw/club_stats/2019_season_club_stats.csv"
+      - "gs://{{ vars.bucket_name }}/raw/club_stats/2020_season_club_stats.csv"
+      - "gs://{{ vars.bucket_name }}/raw/club_stats/2021_season_club_stats.csv"
+      - "gs://{{ vars.bucket_name }}/raw/club_stats/2022_season_club_stats.csv"
+      - "gs://{{ vars.bucket_name }}/raw/club_stats/2023_season_club_stats.csv"
+      - "gs://{{ vars.bucket_name }}/raw/club_stats/2024_season_club_stats.csv"
+    dependsOn:
+      - upload_club_stats_2016
+      - upload_club_stats_2017
+      - upload_club_stats_2018
+      - upload_club_stats_2019
+      - upload_club_stats_2020
+      - upload_club_stats_2021
+      - upload_club_stats_2022
+      - upload_club_stats_2023
+      - upload_club_stats_2024
+
+  # ─────────────────────────────────────────────────────────────────────────────
+  # PHASE 3: Upload player stats → GCS → BigQuery
+  # ─────────────────────────────────────────────────────────────────────────────
+
+  - id: upload_player_stats
+    type: io.kestra.plugin.gcp.gcs.Upload
+    serviceAccount: "{{ vars.gcp_key_path }}"
+    from: "{{ vars.base_path }}/datasets 9 seasons/player_stats_2024_2025_season.csv"
+    to: "gs://{{ vars.bucket_name }}/raw/player_stats/player_stats_2024_2025_season.csv"
+
+  - id: upload_player_info
+    type: io.kestra.plugin.gcp.gcs.Upload
+    serviceAccount: "{{ vars.gcp_key_path }}"
+    from: "{{ vars.base_path }}/datasets 9 seasons/premier_player_info.csv"
+    to: "gs://{{ vars.bucket_name }}/raw/player_stats/premier_player_info.csv"
+
+  - id: load_player_stats_to_bq
+    type: io.kestra.plugin.gcp.bigquery.LoadFromGcs
+    serviceAccount: "{{ vars.gcp_key_path }}"
+    projectId: "{{ vars.project_id }}"
+    destinationTable: "{{ vars.project_id }}.{{ vars.bq_dataset }}.raw_player_stats"
+    format: CSV
+    autodetect: true
+    skipLeadingRows: 1
+    writeDisposition: WRITE_TRUNCATE
+    createDisposition: CREATE_IF_NEEDED
+    location: "{{ vars.bq_location }}"
+    from:
+      - "gs://{{ vars.bucket_name }}/raw/player_stats/player_stats_2024_2025_season.csv"
+    dependsOn:
+      - upload_player_stats
+
+  - id: load_player_info_to_bq
+    type: io.kestra.plugin.gcp.bigquery.LoadFromGcs
+    serviceAccount: "{{ vars.gcp_key_path }}"
+    projectId: "{{ vars.project_id }}"
+    destinationTable: "{{ vars.project_id }}.{{ vars.bq_dataset }}.raw_player_info"
+    format: CSV
+    autodetect: true
+    skipLeadingRows: 1
+    writeDisposition: WRITE_TRUNCATE
+    createDisposition: CREATE_IF_NEEDED
+    location: "{{ vars.bq_location }}"
+    from:
+      - "gs://{{ vars.bucket_name }}/raw/player_stats/premier_player_info.csv"
+    dependsOn:
+      - upload_player_info
+
+  # ─────────────────────────────────────────────────────────────────────────────
+  # PHASE 4: Upload league table (standings) CSVs → GCS → BigQuery
+  # We use the home_and_away final gameweek (GW38) per season as the final table.
+  # All gameweek files are also uploaded for matchweek-level trend analysis.
+  # ─────────────────────────────────────────────────────────────────────────────
+
+  - id: upload_standings_2016
+    type: io.kestra.plugin.gcp.gcs.Upload
+    serviceAccount: "{{ vars.gcp_key_path }}"
+    from: "{{ vars.base_path }}/datasets 9 seasons/league_table/home_and_away/gameweek_2016/2016_gameweek_38.csv"
+    to: "gs://{{ vars.bucket_name }}/raw/standings/2016_final_standings.csv"
+
+  - id: upload_standings_2017
+    type: io.kestra.plugin.gcp.gcs.Upload
+    serviceAccount: "{{ vars.gcp_key_path }}"
+    from: "{{ vars.base_path }}/datasets 9 seasons/league_table/home_and_away/gameweek_2017/2017_gameweek_38.csv"
+    to: "gs://{{ vars.bucket_name }}/raw/standings/2017_final_standings.csv"
+
+  - id: upload_standings_2018
+    type: io.kestra.plugin.gcp.gcs.Upload
+    serviceAccount: "{{ vars.gcp_key_path }}"
+    from: "{{ vars.base_path }}/datasets 9 seasons/league_table/home_and_away/gameweek_2018/2018_gameweek_38.csv"
+    to: "gs://{{ vars.bucket_name }}/raw/standings/2018_final_standings.csv"
+
+  - id: upload_standings_2019
+    type: io.kestra.plugin.gcp.gcs.Upload
+    serviceAccount: "{{ vars.gcp_key_path }}"
+    from: "{{ vars.base_path }}/datasets 9 seasons/league_table/home_and_away/gameweek_2019/2019_gameweek_38.csv"
+    to: "gs://{{ vars.bucket_name }}/raw/standings/2019_final_standings.csv"
+
+  - id: upload_standings_2020
+    type: io.kestra.plugin.gcp.gcs.Upload
+    serviceAccount: "{{ vars.gcp_key_path }}"
+    from: "{{ vars.base_path }}/datasets 9 seasons/league_table/home_and_away/gameweek_2020/2020_gameweek_38.csv"
+    to: "gs://{{ vars.bucket_name }}/raw/standings/2020_final_standings.csv"
+
+  - id: upload_standings_2021
+    type: io.kestra.plugin.gcp.gcs.Upload
+    serviceAccount: "{{ vars.gcp_key_path }}"
+    from: "{{ vars.base_path }}/datasets 9 seasons/league_table/home_and_away/gameweek_2021/2021_gameweek_38.csv"
+    to: "gs://{{ vars.bucket_name }}/raw/standings/2021_final_standings.csv"
+
+  - id: upload_standings_2022
+    type: io.kestra.plugin.gcp.gcs.Upload
+    serviceAccount: "{{ vars.gcp_key_path }}"
+    from: "{{ vars.base_path }}/datasets 9 seasons/league_table/home_and_away/gameweek_2022/2022_gameweek_38.csv"
+    to: "gs://{{ vars.bucket_name }}/raw/standings/2022_final_standings.csv"
+
+  - id: upload_standings_2023
+    type: io.kestra.plugin.gcp.gcs.Upload
+    serviceAccount: "{{ vars.gcp_key_path }}"
+    from: "{{ vars.base_path }}/datasets 9 seasons/league_table/home_and_away/gameweek_2023/2023_gameweek_38.csv"
+    to: "gs://{{ vars.bucket_name }}/raw/standings/2023_final_standings.csv"
+
+  - id: upload_standings_2024
+    type: io.kestra.plugin.gcp.gcs.Upload
+    serviceAccount: "{{ vars.gcp_key_path }}"
+    from: "{{ vars.base_path }}/datasets 9 seasons/league_table/home_and_away/gameweek_2024/2024_gameweek_38.csv"
+    to: "gs://{{ vars.bucket_name }}/raw/standings/2024_final_standings.csv"
+
+  - id: load_standings_to_bq
+    type: io.kestra.plugin.gcp.bigquery.LoadFromGcs
+    serviceAccount: "{{ vars.gcp_key_path }}"
+    projectId: "{{ vars.project_id }}"
+    destinationTable: "{{ vars.project_id }}.{{ vars.bq_dataset }}.raw_standings"
+    format: CSV
+    autodetect: true
+    skipLeadingRows: 1
+    writeDisposition: WRITE_TRUNCATE
+    createDisposition: CREATE_IF_NEEDED
+    location: "{{ vars.bq_location }}"
+    from:
+      - "gs://{{ vars.bucket_name }}/raw/standings/2016_final_standings.csv"
+      - "gs://{{ vars.bucket_name }}/raw/standings/2017_final_standings.csv"
+      - "gs://{{ vars.bucket_name }}/raw/standings/2018_final_standings.csv"
+      - "gs://{{ vars.bucket_name }}/raw/standings/2019_final_standings.csv"
+      - "gs://{{ vars.bucket_name }}/raw/standings/2020_final_standings.csv"
+      - "gs://{{ vars.bucket_name }}/raw/standings/2021_final_standings.csv"
+      - "gs://{{ vars.bucket_name }}/raw/standings/2022_final_standings.csv"
+      - "gs://{{ vars.bucket_name }}/raw/standings/2023_final_standings.csv"
+      - "gs://{{ vars.bucket_name }}/raw/standings/2024_final_standings.csv"
+    dependsOn:
+      - upload_standings_2016
+      - upload_standings_2017
+      - upload_standings_2018
+      - upload_standings_2019
+      - upload_standings_2020
+      - upload_standings_2021
+      - upload_standings_2022
+      - upload_standings_2023
+      - upload_standings_2024
+
+  # ─────────────────────────────────────────────────────────────────────────────
+  # PHASE 5: Upload matches_2425.json → GCS → BigQuery
+  # ─────────────────────────────────────────────────────────────────────────────
+
+  - id: upload_matches_2425
+    type: io.kestra.plugin.gcp.gcs.Upload
+    serviceAccount: "{{ vars.gcp_key_path }}"
+    from: "{{ vars.base_path }}/matches_2425.json"
+    to: "gs://{{ vars.bucket_name }}/raw/matches/matches_2425.json"
+
+  # Note: matches_2425.json is a JSON array, not NDJSON.
+  # BigQuery's autodetect supports JSON arrays via format: JSON (not NEWLINE_DELIMITED_JSON).
+  # Each element of the array becomes one row in BigQuery.
+  - id: load_matches_2425_to_bq
+    type: io.kestra.plugin.gcp.bigquery.LoadFromGcs
+    serviceAccount: "{{ vars.gcp_key_path }}"
+    projectId: "{{ vars.project_id }}"
+    destinationTable: "{{ vars.project_id }}.{{ vars.bq_dataset }}.raw_matches_2425"
+    format: JSON
+    autodetect: true
+    writeDisposition: WRITE_TRUNCATE
+    createDisposition: CREATE_IF_NEEDED
+    location: "{{ vars.bq_location }}"
+    from:
+      - "gs://{{ vars.bucket_name }}/raw/matches/matches_2425.json"
+    dependsOn:
+      - upload_matches_2425

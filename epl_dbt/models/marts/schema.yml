@@ -1,0 +1,107 @@
+version: 2
+
+models:
+  - name: fct_matches
+    description: "Fact table — one row per match for the 2024/25 EPL season. Partitioned by match_date."
+    columns:
+      - name: match_id
+        description: "Unique match identifier."
+        tests:
+          - not_null
+          - unique
+      - name: home_team_name
+        description: "Home team name."
+        tests:
+          - not_null
+      - name: away_team_name
+        description: "Away team name."
+        tests:
+          - not_null
+      - name: home_goals
+        description: "Full-time goals for home team."
+        tests:
+          - not_null
+      - name: away_goals
+        description: "Full-time goals for away team."
+        tests:
+          - not_null
+      - name: result
+        description: "H = home win, D = draw, A = away win."
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['H', 'D', 'A']
+      - name: match_date
+        description: "Date the match was played."
+        tests:
+          - not_null
+      - name: season
+        description: "Season label, always '2024/2025'."
+        tests:
+          - not_null
+
+  - name: dim_players
+    description: "Player dimension — one row per player in 2024/25 season with all stats and derived metrics."
+    columns:
+      - name: player_name
+        description: "Player's full name."
+        tests:
+          - not_null
+          - unique
+      - name: club
+        description: "Club the player belongs to."
+      - name: position
+        description: "Player's position."
+      - name: goals
+        description: "Total goals scored."
+        tests:
+          - not_null
+      - name: goal_contributions
+        description: "Goals + Assists combined."
+      - name: xg
+        description: "Expected goals (xG)."
+      - name: xa
+        description: "Expected assists (xA)."
+      - name: xgi
+        description: "Expected goal involvement (xG + xA)."
+
+  - name: fct_standings
+    description: "Final league table standings for 9 EPL seasons with derived metrics and zone classification."
+    columns:
+      - name: team_name
+        description: "Team name."
+        tests:
+          - not_null
+      - name: final_position
+        description: "Final league position (1-20)."
+        tests:
+          - not_null
+      - name: points
+        description: "Total points."
+        tests:
+          - not_null
+      - name: win_pct
+        description: "Win percentage (wins / games played × 100)."
+      - name: season_zone
+        description: "Zone: Champions League, Europa League, Conference League, Relegated, or Mid-Table."
+        tests:
+          - accepted_values:
+              values: ['Champions League', 'Europa League', 'Conference League', 'Relegated', 'Mid-Table']
+
+  - name: dim_teams
+    description: "Team dimension with KPIs per season — one row per team per season."
+    columns:
+      - name: club_name
+        description: "Club name."
+        tests:
+          - not_null
+      - name: season
+        description: "Season identifier."
+        tests:
+          - not_null
+      - name: xg
+        description: "Expected goals."
+      - name: shot_accuracy_pct
+        description: "Shots on target / total shots × 100."
+      - name: penalty_conversion_pct
+        description: "Penalties scored / penalties awarded × 100."

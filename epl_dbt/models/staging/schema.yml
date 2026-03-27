@@ -1,0 +1,111 @@
+version: 2
+
+sources:
+  - name: epl_raw
+    database: epl-data-pipeline-9999
+    schema: epl_raw
+    tables:
+      - name: raw_club_stats
+        description: "Club statistics for 9 EPL seasons (2016/17 to 2024/25), loaded from CSV via Kestra."
+      - name: raw_player_stats
+        description: "Player statistics for 2024/25 EPL season."
+      - name: raw_player_info
+        description: "Player biographical info (name, club, position, nationality) for 2024/25."
+      - name: raw_standings
+        description: "Final league table standings (GW38) for 9 EPL seasons."
+      - name: raw_matches_2425
+        description: "Detailed match data for 2024/25 season, loaded from matches_2425.json."
+
+models:
+  - name: stg_club_stats
+    description: "Cleaned club statistics — one row per club per season."
+    columns:
+      - name: club_name
+        description: "Club name as provided in the source."
+        tests:
+          - not_null
+      - name: season
+        description: "Season in format YYYY/YYYY (e.g. 2024/2025)."
+        tests:
+          - not_null
+      - name: goals_scored
+        description: "Total goals scored by the club in that season."
+        tests:
+          - not_null
+
+  - name: stg_players
+    description: "Cleaned player statistics joined with player biographical info — one row per player."
+    columns:
+      - name: player_name
+        description: "Player's full name."
+        tests:
+          - not_null
+          - unique
+      - name: club
+        description: "Club the player belongs to in 2024/25."
+      - name: position
+        description: "Player's position: Goalkeeper, Defender, Midfielder, or Forward."
+      - name: goals
+        description: "Total goals scored in the season."
+        tests:
+          - not_null
+
+  - name: stg_standings
+    description: "Cleaned final league table standings — one row per team per season."
+    columns:
+      - name: team_name
+        description: "Team name."
+        tests:
+          - not_null
+      - name: points
+        description: "Total points accumulated."
+        tests:
+          - not_null
+      - name: wins
+        description: "Total wins."
+      - name: goals_for
+        description: "Total goals scored."
+
+  - name: stg_matches
+    description: "Cleaned match results for 2024/25 EPL season from matches_2425.json — one row per match."
+    columns:
+      - name: match_id
+        description: "Synthetic surrogate key based on ordered date + team names."
+        tests:
+          - not_null
+          - unique
+      - name: home_team_name
+        description: "Name of the home team."
+        tests:
+          - not_null
+      - name: away_team_name
+        description: "Name of the away team."
+        tests:
+          - not_null
+      - name: home_goals
+        description: "Goals scored by the home team."
+        tests:
+          - not_null
+      - name: away_goals
+        description: "Goals scored by the away team."
+        tests:
+          - not_null
+      - name: total_goals
+        description: "Combined goals in the match."
+      - name: result
+        description: "Match result: H (home win), D (draw), A (away win)."
+        tests:
+          - accepted_values:
+              values: ['H', 'D', 'A']
+      - name: match_date
+        description: "Date the match was played."
+        tests:
+          - not_null
+      - name: stadium
+        description: "Venue/stadium where the match was played."
+      - name: referee
+        description: "Match referee's name."
+      - name: attendance
+        description: "Number of attendees."
+      - name: season
+        description: "Season label (always 2024/2025)."
